@@ -33,21 +33,18 @@
 		</script>
 		
 		<script>
+		   
+		   // our array
+		   var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
+			
 		   function getArray(){
-			// our array
-			var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
 
 			// storing our array as a string
 			localStorage.setItem("Starwars", JSON.stringify(characters));
 			
 			document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
 
-			// retrieving our data and converting it back into an array
-			var retrievedData = localStorage.getItem("quentinTarantino");
-			var movies2 = JSON.parse(retrievedData);
-
-			//making sure it still is an array
-			alert(movies2.length);
+			
 		   }		   
 		</script>
 		
