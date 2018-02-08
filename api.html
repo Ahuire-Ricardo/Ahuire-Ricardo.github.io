@@ -51,7 +51,7 @@
 
 			//making sure it still is an array
 			document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
-			document.getElementById("results3").innerHTML = 'Length Array: ' + characters2;
+			document.getElementById("results3").innerHTML = 'Array: ' + characters2;
 
 			
 		   }		   
@@ -125,16 +125,27 @@
 	<h2>Storing and Retrieving Arrays</h2>
 	    
 	<pre><code data-language="javascript">	
-// Instantiation of empObj with predefined data
-var stuJson = '{"university":"BYU Idaho","teacher":"Brother Baer","class":"CIT-261 #03"}';
-			
-function getJson() {
-	var studString = JSON.<b>parse</b>(stuJson);
+// our array
+var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
 
-	document.getElementById("resultString").innerHTML = 'University: ' + studString.university;
-	document.getElementById("resultString1").innerHTML = 'Teacher: ' + studString.teacher;
-	document.getElementById("resultString2").innerHTML = 'class: ' + studString.class;
-}
+function getArray(){
+
+// storing our array as a string
+localStorage.setItem("Starwars", JSON.stringify(characters));
+
+// show json object
+document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
+
+// retrieving our data and converting it back into an array
+var retrievedData = localStorage.getItem("Starwars");
+var characters2 = JSON.parse(retrievedData);
+
+//making sure it still is an array
+document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
+document.getElementById("results3").innerHTML = 'Array: ' + characters2;
+
+
+}	
 
       </code></pre>
 	    
@@ -147,7 +158,9 @@ function getJson() {
 		<p id="results2"></p>
 		<p id="results3"></p>
 			
-	</div>	    
+	</div>	 
+	    
+      <h2>Storing and Retrieving Associative Arrays</h2>
 	    
       <h3>Sources:</h3>
         <ul>
