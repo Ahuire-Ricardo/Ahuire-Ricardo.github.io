@@ -33,6 +33,25 @@
 		</script>
 		
 		<script>
+		   function getArray(){
+			// our array
+			var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
+
+			// storing our array as a string
+			localStorage.setItem("Star wars", JSON.stringify(movies));
+			
+			document.getElementById("results").innerHTML = 'Json File: ' + localStorage..getItem("Star wars");
+
+			// retrieving our data and converting it back into an array
+			var retrievedData = localStorage.getItem("quentinTarantino");
+			var movies2 = JSON.parse(retrievedData);
+
+			//making sure it still is an array
+			alert(movies2.length);
+		   }		   
+		</script>
+		
+		<script>
 			// Instantiation of empObj with predefined data
 			var stuJson = '{"university":"BYU Idaho","teacher":"Brother Baer","class":"CIT-261 #03"}';
 			
