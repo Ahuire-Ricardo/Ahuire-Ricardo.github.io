@@ -40,7 +40,7 @@
 			// storing our array as a string
 			localStorage.setItem("Star wars", JSON.stringify(movies));
 			
-			document.getElementById("results").innerHTML = 'Json File: ' + localStorage..getItem("Star wars");
+			document.getElementById("results1").innerHTML = 'Json File: ' + localStorage..getItem("Star wars");
 
 			// retrieving our data and converting it back into an array
 			var retrievedData = localStorage.getItem("quentinTarantino");
@@ -137,10 +137,8 @@ function getJson() {
 	</div>
 	<div class="col-md-12">
 		<h3>Results</h3>
-		<p id="resultString"></p>
-		<p id="resultString1"></p>
-		<p id="resultString2"></p>
-		
+		<p id="results1"></p>
+			
 	</div>	    
 	    
       <h3>Sources:</h3>
