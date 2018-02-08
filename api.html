@@ -19,23 +19,17 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
-			// Instantiation of empObj with predefined data
-			var stuObj = {
-					 university:'BYU Idaho',
-					 teacher:'Brother Baer',
-					 class: 'CIT-261 #03',
-					 students:
-						['Ricardo Ahuire','Jayton Birth','Ali Cope','Skyler Hildreth'],
-				     };
-			
-			function getEmployee() {
-				let json = JSON.stringify(stuObj);
-
-				document.getElementById("results").innerHTML = 'Json File: ' + json;
+		   function getName(){
+			// Check browser support
+			if (typeof(Storage) !== "undefined") {
+			    // Store
+			    localStorage.setItem("lastname", "Smith");
+			    // Retrieve
+			    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+			} else {
+			    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
 			}
-			//alert(typeof json); // we've got a string!
-
-			//alert(json)
+		   }	   
 		</script>
 		
 		<script>
@@ -68,10 +62,14 @@
     </section>
 
     <section class="main-content">
-       <h2>What is a Json?</h2>
-	    <p>JSON (<b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation) is a <b>lightweight</b> data-interchange format. It is easy for humans to read and write. 
-	       It is easy for machines to parse and generate. JSON is a text format that is <b>completely language independent</b>.
-	       These properties make JSON an ideal data-interchange language.</p>
+       <h2>Local Storage API</h2>
+	    <p>With <b>web storage</b>, web applications can store data locally within the user's browser.
+	       Before HTML5, application data had to be stored in <b>cookies(text file)>/b>, included in every server request.
+	       Web storage is more secure and provides two <b>objects</b> for storing data on the client:</p>
+	    <ul>
+	      <li><b>window.localStorage - stores data with no expiration date.</b></li>
+	      <li>window.sessionStorage - stores data for one session (data is lost when the browser tab is closed).</li>
+	    </ul>
         <p>In other words: </p>
 	<ul>
 	  <li>JSON is a syntax for storing and exchanging data.</li>
@@ -103,30 +101,37 @@
 	
         <pre><code data-language="javascript">
 
-// Instantiation of empObj with predefined data
-var stuObj = {
-	 university:'BYU Idaho',
-	 teacher:'Brother Baer',
-	 class: 'CIT-261 #03',
-	 students:
-		['Ricardo Ahuire','Jayton Birth','Ali Cope','Skyler Hildreth'],
-     };
+		<!DOCTYPE html>
+		<html>
+		<body>
 
-function getEmployee() {
-let json = JSON.<b>stringify</b>(stuObj);
+		<div id="result"></div>
 
-document.getElementById("results").innerHTML = 'Json File: ' + json;
-}
+		<script>
+		   function getName(){
+			// Check browser support
+			if (typeof(Storage) !== "undefined") {
+			    // Store
+			    localStorage.setItem("lastname", "Smith");
+			    // Retrieve
+			    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+			} else {
+			    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+			}
+		   }		   
+		</script>
 
+		</body>
+		</html>
 		
 	 </code></pre>
 	 
          <div class="col-md-12">
-		<button onclick="getEmployee()">Run Script</button><br /><br />
+		<button onclick="getName()">Run Script</button><br /><br />
 	</div>
 	<div class="col-md-12">
 		<h3>Results</h3>
-		<p id="results"></p>
+		<p id="result"></p>
 		
 		<a href="https://jsonlint.com">Jsolint (to validate Json file)</a> <br /><br />
 	</div>
