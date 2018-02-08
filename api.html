@@ -58,6 +58,51 @@
 		</script>
 		
 		<script>
+		   
+		   // our Associative array
+		   var apps = [
+			     {
+			      'id': 1,
+			      'title':'Gospel Library',
+			      'Genre':'Religion'
+			     },
+			     {
+			      'id': 2,
+			      'title':'Spotify',
+			      'Genre':'Music'
+			     },
+			     {
+			      'id': 3,
+			      'title':'Netflix',
+			      'Genre':'Movie and Series'
+			     },
+			     {
+			      'id': 4,
+			      'title':'Twitter',
+			      'Genre':'Social'
+			     }
+			    ];
+			
+		   function getAssociativeArray(){
+
+			// storing our array as a string
+			localStorage.setItem("AppsAndroid", JSON.stringify(apps));
+			
+			// show json object
+			document.getElementById("results4").innerHTML = 'Json File: ' + localStorage.getItem("AppsAndroid");
+			   
+			// retrieving our data and converting it back into an array
+			var retrievedData = localStorage.getItem("AppsAndroid");
+			var apps2 = JSON.parse(retrievedData);
+
+			//making sure it still is an array
+			document.getElementById("results5").innerHTML = 'Length Array: ' + apps2.length;
+			document.getElementById("results6").innerHTML = 'Array: ' + apps2;
+
+			
+		   }		   
+		</script>
+		<script>
 			// Instantiation of empObj with predefined data
 			var stuJson = '{"university":"BYU Idaho","teacher":"Brother Baer","class":"CIT-261 #03"}';
 			
@@ -130,19 +175,19 @@ var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "
 
 function getArray(){
 
-// storing our array as a string
-localStorage.setItem("Starwars", JSON.stringify(characters));
+	// storing our array as a string
+	localStorage.setItem("Starwars", JSON.stringify(characters));
 
-// show json object
-document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
+	// show json object
+	document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
 
-// retrieving our data and converting it back into an array
-var retrievedData = localStorage.getItem("Starwars");
-var characters2 = JSON.parse(retrievedData);
+	// retrieving our data and converting it back into an array
+	var retrievedData = localStorage.getItem("Starwars");
+	var characters2 = JSON.parse(retrievedData);
 
-//making sure it still is an array
-document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
-document.getElementById("results3").innerHTML = 'Array: ' + characters2;
+	//making sure it still is an array
+	document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
+	document.getElementById("results3").innerHTML = 'Array: ' + characters2;
 
 
 }	
@@ -161,6 +206,66 @@ document.getElementById("results3").innerHTML = 'Array: ' + characters2;
 	</div>	 
 	    
       <h2>Storing and Retrieving Associative Arrays</h2>
+	    
+      <pre><code data-language="javascript">
+      
+// our Associative array
+var apps = [
+     {
+      'id': 1,
+      'title':'Gospel Library',
+      'Genre':'Religion'
+     },
+     {
+      'id': 2,
+      'title':'Spotify',
+      'Genre':'Music'
+     },
+     {
+      'id': 3,
+      'title':'Netflix',
+      'Genre':'Movie and Series'
+     },
+     {
+      'id': 4,
+      'title':'Twitter',
+      'Genre':'Social'
+     }
+    ];
+
+function getAssociativeArray(){
+
+	// storing our array as a string
+	localStorage.setItem("AppsAndroid", JSON.stringify(apps));
+
+	// show json object
+	document.getElementById("results4").innerHTML = 'Json File: ' + localStorage.getItem("AppsAndroid");
+
+	// retrieving our data and converting it back into an array
+	var retrievedData = localStorage.getItem("AppsAndroid");
+	var apps2 = JSON.parse(retrievedData);
+
+	//making sure it still is an array
+	document.getElementById("results5").innerHTML = 'Length Array: ' + apps2.length;
+	document.getElementById("results6").innerHTML = 'Array: ' + apps2;
+
+
+}
+      
+      </code></pre>
+	    
+      <div class="col-md-12">
+		<button onclick="getAssociativeArray()">Run Script</button><br /><br />
+	</div>
+	<div class="col-md-12">
+		<h3>Results</h3>
+		<p id="results4"></p>
+		<p id="results5"></p>
+		<p id="results6"></p>
+			
+      </div>	 
+	    
+      
 	    
       <h3>Sources:</h3>
         <ul>
