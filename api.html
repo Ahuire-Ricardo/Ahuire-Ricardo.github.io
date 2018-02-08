@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Api</title>
+
+		<meta charset="utf-8" />
+		
+		<meta name="DESCRIPTION" content="JSON Parse, Stringify" />
+		<meta name="KEYWORDS" content="CIT 261, BYU-Idaho" />
+		<meta name="Author" content="Ricardo Ahuire" />
+		<meta name="School" content="BYU-Idaho" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+	        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+	        <link href="css/theme.css" rel="stylesheet" type="text/css">
+	        <script src="javascripts/rainbow.js"></script>
+	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+
+		<script>
+			// Instantiation of empObj with predefined data
+			var stuObj = {
+					 university:'BYU Idaho',
+					 teacher:'Brother Baer',
+					 class: 'CIT-261 #03',
+					 students:
+						['Ricardo Ahuire','Jayton Birth','Ali Cope','Skyler Hildreth'],
+				     };
+			
+			function getEmployee() {
+				let json = JSON.stringify(stuObj);
+
+				document.getElementById("results").innerHTML = 'Json File: ' + json;
+			}
+			//alert(typeof json); // we've got a string!
+
+			//alert(json)
+		</script>
+		
+		<script>
+			// Instantiation of empObj with predefined data
+			var stuJson = '{"university":"BYU Idaho","teacher":"Brother Baer","class":"CIT-261 #03"}';
+			
+			function getJson() {
+				var studString = JSON.parse(stuJson);
+
+				document.getElementById("resultString").innerHTML = 'University: ' + studString.university;
+				document.getElementById("resultString1").innerHTML = 'Teacher: ' + studString.teacher;
+				document.getElementById("resultString2").innerHTML = 'Class: ' + studString.class;
+			}
+			//alert(typeof json); // we've got a string!
+
+			//alert(json)
+		</script>
+
+	</head>
+	
+	<body>
+    <section class="page-header">
+      <h1 class="project-name">Ricardo Ahuire</h1>
+      <h2 class="project-tagline">Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects </h2>
+
+     <nav id="primary_nav_wrap">
+          <ul>
+            <li class="current-menu-item"><a href="https://ahuire-ricardo.github.io">Home</a></li>
+           
+    </section>
+
+    <section class="main-content">
+       <h2>What is a Json?</h2>
+	    <p>JSON (<b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation) is a <b>lightweight</b> data-interchange format. It is easy for humans to read and write. 
+	       It is easy for machines to parse and generate. JSON is a text format that is <b>completely language independent</b>.
+	       These properties make JSON an ideal data-interchange language.</p>
+        <p>In other words: </p>
+	<ul>
+	  <li>JSON is a syntax for storing and exchanging data.</li>
+	  <li>JSON is text, written with JavaScript object notation.</li>
+	</ul>
+	
+	<p>JSON is built on two structures: </p>
+	<ul>
+	  <li>A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.</li>
+	  <li>An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.</li>
+	</ul>
+	    
+	<img src="JsonExample.jpg" style="width:500px;height:280px;" align=center> 
+	    
+	<h2>Exchanging Data</h2>
+	 <ul>   
+	    <li>When exchanging data between a browser and a server, the data can only be text.</li>
+		 <li>JSON is text, and we can convert any JavaScript object into JSON, and <b>send</b> JSON to the server.</li>
+	    <li>We can also convert any JSON <b>received</b> from the server into JavaScript objects.</li>
+	 </ul>
+	    
+	 <h2>JSON Parse and Stringify</h2>
+	   <ul>   
+	    <li>Both are very useful methods to deal with JSON-formatted content.</li>
+	    <li>JSON.<b>stringify</b> to convert objects into JSON.</li>
+	    <li>JSON.<b>parse to</b> convert JSON back into an object.</li>
+	  </ul>
+                   
+	
+        <pre><code data-language="javascript">
+
+// Instantiation of empObj with predefined data
+var stuObj = {
+	 university:'BYU Idaho',
+	 teacher:'Brother Baer',
+	 class: 'CIT-261 #03',
+	 students:
+		['Ricardo Ahuire','Jayton Birth','Ali Cope','Skyler Hildreth'],
+     };
+
+function getEmployee() {
+let json = JSON.<b>stringify</b>(stuObj);
+
+document.getElementById("results").innerHTML = 'Json File: ' + json;
+}
+
+		
+	 </code></pre>
+	 
+         <div class="col-md-12">
+		<button onclick="getEmployee()">Run Script</button><br /><br />
+	</div>
+	<div class="col-md-12">
+		<h3>Results</h3>
+		<p id="results"></p>
+		
+		<a href="https://jsonlint.com">Jsolint (to validate Json file)</a> <br /><br />
+	</div>
+	    
+	<pre><code data-language="javascript">	
+// Instantiation of empObj with predefined data
+var stuJson = '{"university":"BYU Idaho","teacher":"Brother Baer","class":"CIT-261 #03"}';
+			
+function getJson() {
+	var studString = JSON.<b>parse</b>(stuJson);
+
+	document.getElementById("resultString").innerHTML = 'University: ' + studString.university;
+	document.getElementById("resultString1").innerHTML = 'Teacher: ' + studString.teacher;
+	document.getElementById("resultString2").innerHTML = 'class: ' + studString.class;
+}
+
+      </code></pre>
+	    
+	<div class="col-md-12">
+		<button onclick="getJson()">Run Script</button><br /><br />
+	</div>
+	<div class="col-md-12">
+		<h3>Results</h3>
+		<p id="resultString"></p>
+		<p id="resultString1"></p>
+		<p id="resultString2"></p>
+		
+	</div>	    
+	    
+      <h3>Sources:</h3>
+        <ul>
+          <li><a href="http://www.w3schools.com/js/js_objects.asp">W3 Schools</a></li>
+          <li><a href="https://alligator.io/js/json-parse-stringify/">alligator.io</a></li>
+	  <li><a href="https://javascript.info/json">Javascript.info</a></li>
+	  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">developer.mozilla.org</a></li>
+        </ul>
+
+      <footer class="site-footer">
+
+        <h6><span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></h6>
+      </footer>
+
+    </section>
+
+  
+  </body>
+
+
+	
+</html>
