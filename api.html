@@ -23,7 +23,7 @@
 			// Check browser support
 			if (typeof(Storage) !== "undefined") {
 			    // Store
-			    localStorage.setItem("lastname", "Smith");
+			    localStorage.setItem("lastname", "Ahuire");
 			    // Retrieve
 			    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 			} else {
@@ -38,9 +38,9 @@
 			var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
 
 			// storing our array as a string
-			localStorage.setItem("Star wars", JSON.stringify(movies));
+			localStorage.setItem("Starwars", JSON.stringify(characters));
 			
-			document.getElementById("results1").innerHTML = 'Json File: ' + localStorage..getItem("Star wars");
+			document.getElementById("results1").innerHTML = 'Json File: ' + localStorage..getItem("Starwars");
 
 			// retrieving our data and converting it back into an array
 			var retrievedData = localStorage.getItem("quentinTarantino");
