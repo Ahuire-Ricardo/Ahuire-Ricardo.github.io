@@ -70,35 +70,7 @@
 	      <li><b>window.localStorage - stores data with no expiration date.</b></li>
 	      <li>window.sessionStorage - stores data for one session (data is lost when the browser tab is closed).</li>
 	    </ul>
-        <p>In other words: </p>
-	<ul>
-	  <li>JSON is a syntax for storing and exchanging data.</li>
-	  <li>JSON is text, written with JavaScript object notation.</li>
-	</ul>
-	
-	<p>JSON is built on two structures: </p>
-	<ul>
-	  <li>A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.</li>
-	  <li>An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.</li>
-	</ul>
-	    
-	<img src="JsonExample.jpg" style="width:500px;height:280px;" align=center> 
-	    
-	<h2>Exchanging Data</h2>
-	 <ul>   
-	    <li>When exchanging data between a browser and a server, the data can only be text.</li>
-		 <li>JSON is text, and we can convert any JavaScript object into JSON, and <b>send</b> JSON to the server.</li>
-	    <li>We can also convert any JSON <b>received</b> from the server into JavaScript objects.</li>
-	 </ul>
-	    
-	 <h2>JSON Parse and Stringify</h2>
-	   <ul>   
-	    <li>Both are very useful methods to deal with JSON-formatted content.</li>
-	    <li>JSON.<b>stringify</b> to convert objects into JSON.</li>
-	    <li>JSON.<b>parse to</b> convert JSON back into an object.</li>
-	  </ul>
-                   
-	
+       
         <pre><code data-language="javascript">
 
 		<script>
@@ -106,7 +78,7 @@
 			// Check browser support
 			if (typeof(Storage) !== "undefined") {
 			    // Store
-			    localStorage.setItem("lastname", "Smith");
+			    localStorage.setItem("lastname", "Ahuire");
 			    // Retrieve
 			    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 			} else {
