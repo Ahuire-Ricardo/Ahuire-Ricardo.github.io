@@ -1,1 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Api</title>
+
+		<meta charset="utf-8" />
+		
+		<meta name="DESCRIPTION" content="DOM" />
+		<meta name="KEYWORDS" content="CIT 261, BYU-Idaho" />
+		<meta name="Author" content="Ricardo Ahuire" />
+		<meta name="School" content="BYU-Idaho" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+	        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+	        <link href="css/theme.css" rel="stylesheet" type="text/css">
+	        <script src="javascripts/rainbow.js"></script>
+	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+
+		<script>
+		   function getName(){
+			// Check browser support
+			if (typeof(Storage) !== "undefined") {
+			    // Store
+			    localStorage.setItem("lastname", "Ahuire");
+			    // Retrieve
+			    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+			} else {
+			    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+			}
+		   }	   
+		</script>
+		
+		<script>
+		   
+		   // our array
+		   var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
+			
+		   function getArray(){
+
+			// storing our array as a string
+			localStorage.setItem("Starwars", JSON.stringify(characters));
+			
+			// show json object
+			document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
+			   
+			// retrieving our data and converting it back into an array
+			var retrievedData = localStorage.getItem("Starwars");
+			var characters2 = JSON.parse(retrievedData);
+
+			//making sure it still is an array
+			document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
+			document.getElementById("results3").innerHTML = 'Array: ' + characters2;
+
+			
+		   }		   
+		</script>
+		
+		<script>
+		   
+		   // our Associative array
+		   var apps = [
+			     {
+			      'id': 1,
+			      'title':'Gospel Library',
+			      'Genre':'Religion'
+			     },
+			     {
+			      'id': 2,
+			      'title':'Spotify',
+			      'Genre':'Music'
+			     },
+			     {
+			      'id': 3,
+			      'title':'Netflix',
+			      'Genre':'Movie and Series'
+			     },
+			     {
+			      'id': 4,
+			      'title':'Twitter',
+			      'Genre':'Social'
+			     }
+			    ];
+			
+		   function getAssociativeArray(){
+
+			// storing our array as a string
+			localStorage.setItem("AppsAndroid", JSON.stringify(apps));
+			
+			// show json object
+			document.getElementById("results4").innerHTML = 'Json File: ' + localStorage.getItem("AppsAndroid");
+			   
+			// retrieving our data and converting it back into an array
+			var retrievedData = localStorage.getItem("AppsAndroid");
+			var apps2 = JSON.parse(retrievedData);
+
+			//making sure it still is an array
+			document.getElementById("results5").innerHTML = 'Length Array: ' + apps2.length;
+			document.getElementById("results6").innerHTML = 'Array: ' + apps2[1].title;
+
+			
+		   }		   
+		</script>
+		
+	</head>
+	
+	<body>
+    <section class="page-header">
+      <h1 class="project-name">Ricardo Ahuire</h1>
+      <h2 class="project-tagline">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. </h2>
+
+     <nav id="primary_nav_wrap">
+          <ul>
+            <li class="current-menu-item"><a href="https://ahuire-ricardo.github.io">Home</a></li>
+           
+    </section>
+
+    <section class="main-content">
+       <h2>Document Object Model (DOM)</h2>
+	    <p>With <b>web storage</b>, web applications can store data locally within the user's browser.
+	       Before HTML5, application data had to be stored in <b>cookies(text file)</b>, included in every server request.
+	       Web storage is more secure and provides two <b>objects</b> for storing data on the client:</p>
+	    <ul>
+	      <li><b>window.localStorage - stores data with no expiration date.</b></li>
+	      <li>window.sessionStorage - stores data for one session (data is lost when the browser tab is closed).</li>
+	    </ul>
+	    
+	<h2>Storing and Retrieving Simple Data</h2>    
+       
+        <pre><code data-language="javascript">
+
+  function getName(){
+	// Check browser support
+	if (typeof(Storage) !== "undefined") {
+	    // Store
+	    localStorage.setItem("lastname", "Ahuire");
+	    // Retrieve
+	    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+	} else {
+	    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+	}
+   }		   
+		
+	 </code></pre>
+	 
+         <div class="col-md-12">
+		<button onclick="getName()">Run Script</button><br /><br />
+	</div>
+	<div class="col-md-12">
+		<h3>Results</h3>
+		<p id="result"></p>
+	</div>
+	    
+	<h2>Storing and Retrieving Arrays</h2>
+	    
+	<pre><code data-language="javascript">	
+// our array
+var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
+
+function getArray(){
+
+	// storing our array as a string
+	localStorage.setItem("Starwars", JSON.stringify(characters));
+
+	// show json object
+	document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
+
+	// retrieving our data and converting it back into an array
+	var retrievedData = localStorage.getItem("Starwars");
+	var characters2 = JSON.parse(retrievedData);
+
+	//making sure it still is an array
+	document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
+	document.getElementById("results3").innerHTML = 'Array: ' + characters2;
+
+
+}	
+
+      </code></pre>
+	    
+	<div class="col-md-12">
+		<button onclick="getArray()">Run Script</button><br /><br />
+	</div>
+	<div class="col-md-12">
+		<h3>Results</h3>
+		<p id="results1"></p>
+		<p id="results2"></p>
+		<p id="results3"></p>
+			
+	</div>	 
+	    
+      <h2>Storing and Retrieving Associative Arrays and Objects</h2>
+	    
+      <pre><code data-language="javascript">
+      
+// our Associative array
+var apps = [
+     {
+      'id': 1,
+      'title':'Gospel Library',
+      'Genre':'Religion'
+     },
+     {
+      'id': 2,
+      'title':'Spotify',
+      'Genre':'Music'
+     },
+     {
+      'id': 3,
+      'title':'Netflix',
+      'Genre':'Movie and Series'
+     },
+     {
+      'id': 4,
+      'title':'Twitter',
+      'Genre':'Social'
+     }
+    ];
+
+function getAssociativeArray(){
+
+	// storing our array as a string
+	localStorage.setItem("AppsAndroid", JSON.stringify(apps));
+
+	// show json object
+	document.getElementById("results4").innerHTML = 'Json File: ' + localStorage.getItem("AppsAndroid");
+
+	// retrieving our data and converting it back into an array
+	var retrievedData = localStorage.getItem("AppsAndroid");
+	var apps2 = JSON.parse(retrievedData);
+
+	//making sure it still is an array
+	document.getElementById("results5").innerHTML = 'Length Array: ' + apps2.length;
+	document.getElementById("results6").innerHTML = 'Array: ' + apps2[0].title;
+
+
+}
+      
+      </code></pre>
+	    
+      <div class="col-md-12">
+		<button onclick="getAssociativeArray()">Run Script</button><br /><br />
+	</div>
+	<div class="col-md-12">
+		<h3>Results</h3>
+		<p id="results4"></p>
+		<p id="results5"></p>
+		<p id="results6"></p>
+			
+      </div>	 
+	    
+      
+	    
+      <h3>Sources:</h3>
+        <ul>
+          <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
+          <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
+	  <li><a href="https://javascript.info/json">Javascript.info</a></li>
+	  <li><a href="https://www.javascript.com/resources">javascript.com</a></li>
+	  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage">developer.mozilla.org</a></li>
+	  <li><a href="https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm">kirupa.com</a></li>
+        </ul>
+
+      <footer class="site-footer">
+
+        <h6><span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></h6>
+      </footer>
+
+    </section>
+
+  
+  </body>
+
+
+	
+</html>
 
