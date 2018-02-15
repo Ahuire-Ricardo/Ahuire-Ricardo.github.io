@@ -19,17 +19,27 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
-		   function getName(){
-			// Check browser support
-			if (typeof(Storage) !== "undefined") {
-			    // Store
-			    localStorage.setItem("lastname", "Ahuire");
-			    // Retrieve
-			    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-			} else {
-			    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-			}
-		   }	   
+		   (function(){
+			    var ul = document.createElement('ul');
+			    ul.setAttribute('id','proList');
+
+			    var t, tt;
+			    productList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
+
+			    document.getElementById('col-md-12').appendChild(ul);
+			    productList.forEach(renderProductList);
+
+			    function renderProductList(element, index, arr) {
+				var li = document.createElement('li');
+				li.setAttribute('class','item');
+
+				ul.appendChild(li);
+
+				t = document.createTextNode(element);
+
+				li.innerHTML=li.innerHTML + element;
+			    }
+			})();
 		</script>
 		
 		<script>
@@ -128,18 +138,28 @@
        
         <pre><code data-language="javascript">
 
-  function getName(){
-	// Check browser support
-	if (typeof(Storage) !== "undefined") {
-	    // Store
-	    localStorage.setItem("lastname", "Ahuire");
-	    // Retrieve
-	    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-	} else {
-	    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-	}
-   }		   
-		
+ (function(){
+    var ul = document.createElement('ul');
+    ul.setAttribute('id','proList');
+
+    var t, tt;
+    productList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
+
+    document.getElementById('col-md-12').appendChild(ul);
+    productList.forEach(renderProductList);
+
+    function renderProductList(element, index, arr) {
+	var li = document.createElement('li');
+	li.setAttribute('class','item');
+
+	ul.appendChild(li);
+
+	t = document.createTextNode(element);
+
+	li.innerHTML=li.innerHTML + element;
+    }
+})();	   
+
 	 </code></pre>
 	 
          <div class="col-md-12">
