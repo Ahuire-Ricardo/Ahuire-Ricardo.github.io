@@ -19,19 +19,20 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
-		   (function(){
-			    var ul = document.createElement('ul');
-			    ul.setAttribute('id','proList');
+		   var memberList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
+			
+		   function addList(){
+			    var ul = document.createElement("ul");
+			    ul.setAttribute("id","memberList");
 
 			    var t, tt;
-			    productList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
+			    
+			    document.getElementById("col-md-12").appendChild(ul);
+			    memberList.forEach(renderMemberList);
 
-			    document.getElementById('col-md-12').appendChild(ul);
-			    productList.forEach(renderProductList);
-
-			    function renderProductList(element, index, arr) {
-				var li = document.createElement('li');
-				li.setAttribute('class','item');
+			    function renderMemberList(element, index, arr) {
+				var li = document.createElement("li");
+				li.setAttribute("class","item");
 
 				ul.appendChild(li);
 
@@ -39,7 +40,7 @@
 
 				li.innerHTML=li.innerHTML + element;
 			    }
-			})();
+		    }
 		</script>
 		
 		<script>
@@ -163,7 +164,7 @@
 	 </code></pre>
 	 
          <div class="col-md-12">
-		<button onclick="getName()">Run Script</button><br /><br />
+		<button onclick="addList()">Run Script</button><br /><br />
 	</div>
 	<div class="col-md-12">
 		<h3>Results</h3>
