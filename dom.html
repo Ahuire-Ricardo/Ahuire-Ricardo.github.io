@@ -170,28 +170,14 @@
 	<h2>removeChild</h2>
 	    
 	<pre><code data-language="javascript">	
-// our array
-var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
+   function removeList(){
+    var parent = document.getElementById("DOM2");
+    var item = document.getElementById("ul");
 
-function getArray(){
-
-	// storing our array as a string
-	localStorage.setItem("Starwars", JSON.stringify(characters));
-
-	// show json object
-	document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
-
-	// retrieving our data and converting it back into an array
-	var retrievedData = localStorage.getItem("Starwars");
-	var characters2 = JSON.parse(retrievedData);
-
-	//making sure it still is an array
-	document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
-	document.getElementById("results3").innerHTML = 'Array: ' + characters2;
-
-
-}	
-
+    if(item.parentNode){
+	item.parentNode.removeChild(node)
+    }
+   }
       </code></pre>
 	    
 	<div class="col-md-12" id= "DOM2">
