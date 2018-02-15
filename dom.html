@@ -51,13 +51,9 @@
 		<script>
 		   
 		   function removeList(){
-	            var parent = document.getElementById("DOM2");
-	            var item = document.getElementById("ul");
-	            
-		    if(item.parentNode){
-			item.parentNode.removeChild(item);
-		    }
-		   }
+	            var parent = document.getElementById("ul");
+	            parent.removeChild(parent.childNodes[0]);
+	           }
 		    
 		</script>
 		
