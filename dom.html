@@ -22,24 +22,24 @@
 		   var memberList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
 			
 		   function addList(){
-			    var ul = document.createElement("ul");
-			    ul.setAttribute("id","memberList");
+		    var ul = document.createElement("ul");
+		    ul.setAttribute("id","memberList");
 
-			    var t, tt;
-			    
-			    document.getElementById("col-md-12").appendChild(ul);
-			    memberList.forEach(renderMemberList);
+		    var t, tt;
 
-			    function renderMemberList(element, index, arr) {
-				var li = document.createElement("li");
-				li.setAttribute("class","item");
+		    document.getElementById("DOM1").appendChild(ul);
+		    memberList.forEach(renderMemberList);
 
-				ul.appendChild(li);
+		    function renderMemberList(element, index, arr) {
+			var li = document.createElement("li");
+			li.setAttribute("class","item");
 
-				t = document.createTextNode(element);
+			ul.appendChild(li);
 
-				li.innerHTML=li.innerHTML + element;
-			    }
+			t = document.createTextNode(element);
+
+			li.innerHTML=li.innerHTML + element;
+		     }
 		    }
 		</script>
 		
@@ -163,7 +163,7 @@
 
 	 </code></pre>
 	 
-         <div class="col-md-12">
+         <div class="col-md-12" id= "DOM1">
 		<button onclick="addList()">Run Script</button><br /><br />
 	</div>
 	<div class="col-md-12">
