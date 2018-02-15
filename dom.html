@@ -52,9 +52,8 @@
 		<script>
 		   
 		   function removeList(){
-	            var parent = document.getElementById("group");
-	            var father = parent.parentNode;
-	            father.removeChild(parent);
+	            var list = document.getElementById("group");
+	            list.removeChild(list.childNodes[0]);
 	           }
 		    
 		</script>
