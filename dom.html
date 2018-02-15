@@ -19,7 +19,7 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
-		   var memberList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
+		   var memberList = ['Ricardo Ahuire','Jayton Birch','Ali Cope','Glen Sadler'];
 			
 		   function addList(){
 		    var ul = document.createElement("ul");
@@ -139,27 +139,22 @@
        
         <pre><code data-language="javascript">
 
- (function(){
-    var ul = document.createElement('ul');
-    ul.setAttribute('id','proList');
-
+   var memberList = ['Ricardo Ahuire','Jayton Birch','Ali Cope','Glen Sadler'];
+			
+   function addList(){
+    var ul = document.createElement("ul");
+    ul.setAttribute("id","memberList");
     var t, tt;
-    productList = ['Electronics Watch','House wear Items','Kids wear','Women Fashion'];
-
-    document.getElementById('col-md-12').appendChild(ul);
-    productList.forEach(renderProductList);
-
-    function renderProductList(element, index, arr) {
-	var li = document.createElement('li');
-	li.setAttribute('class','item');
-
+    document.getElementById("DOM1").appendChild(ul);
+    memberList.forEach(renderMemberList);
+    function renderMemberList(element, index, arr) {
+	var li = document.createElement("li");
+	li.setAttribute("class","item");
 	ul.appendChild(li);
-
 	t = document.createTextNode(element);
-
 	li.innerHTML=li.innerHTML + element;
+     }
     }
-})();	   
 
 	 </code></pre>
 	 
