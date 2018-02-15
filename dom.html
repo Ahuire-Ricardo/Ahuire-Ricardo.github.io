@@ -53,7 +53,12 @@
 		   
 		   function removeList(){
 	            var list = document.getElementById("group");
-	            list.removeChild(list.childNodes[0]);
+	            
+		    if (!list){
+			alert("The element not exist");   
+		    } else {
+	            	list.removeChild(list.childNodes[0]);
+		    }
 	           }
 		    
 		</script>
@@ -168,11 +173,12 @@
 	    
 	<pre><code data-language="javascript">	
    function removeList(){
-    var parent = document.getElementById("DOM2");
-    var item = document.getElementById("ul");
+    var list = document.getElementById("group");
 
-    if(item.parentNode){
-	item.parentNode.removeChild(item);
+    if (!list){
+	alert("The element not exist");   
+    } else {
+	list.removeChild(list.childNodes[0]);
     }
    }
       </code></pre>
