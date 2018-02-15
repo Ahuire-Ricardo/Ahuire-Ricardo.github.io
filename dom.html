@@ -38,6 +38,7 @@
 		    function renderMemberList(element, index, arr) {
 			var li = document.createElement("li");
 			li.setAttribute("class","item");
+			li.setAttribute("name","group");
 
 			ul.appendChild(li);
 
@@ -51,7 +52,7 @@
 		<script>
 		   
 		   function removeList(){
-	            var parent = document.getElementsByTagName("ul");
+	            var parent = document.getElementByName("group");
 	            var father = parent.parentNode;
 	            father.removeChild(parent);
 	           }
