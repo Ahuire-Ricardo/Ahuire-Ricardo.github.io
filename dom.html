@@ -143,18 +143,27 @@
         <pre><code data-language="javascript">
 
    var memberList = ['Ricardo Ahuire','Jayton Birch','Ali Cope','Glen Sadler'];
-			
+   var nameList = "List of Member - Group #4 - CIT261";
+
    function addList(){
+    var h3 = document.createElement("h3");
     var ul = document.createElement("ul");
     ul.setAttribute("id","memberList");
+    h3.innerHTML= nameList;
+
     var t, tt;
+    document.getElementById("DOM1").appendChild(h3);
     document.getElementById("DOM1").appendChild(ul);
     memberList.forEach(renderMemberList);
+
     function renderMemberList(element, index, arr) {
 	var li = document.createElement("li");
 	li.setAttribute("class","item");
+
 	ul.appendChild(li);
+
 	t = document.createTextNode(element);
+
 	li.innerHTML=li.innerHTML + element;
      }
     }
