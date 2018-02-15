@@ -52,7 +52,8 @@
 		   
 		   function removeList(){
 	            var parent = document.getElementsByTagName("ul");
-	            parent.removeChild(parent);
+	            var father = parent.parentNode;
+	            father.removeChild(parent);
 	           }
 		    
 		</script>
