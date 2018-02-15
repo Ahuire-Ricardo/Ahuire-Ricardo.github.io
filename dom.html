@@ -19,7 +19,9 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
+	           //Array List
 		   var memberList = ['Ricardo Ahuire','Jayton Birch','Ali Cope','Glen Sadler'];
+		   //Variable with Tittle for UL
 		   var nameList = "List of Member - Group #4 - CIT261";
 			
 		   function addList(){
@@ -48,27 +50,14 @@
 		
 		<script>
 		   
-		   // our array
-		   var characters = ["Luke", "Leia", "Yoda","Rey","Han Solo","Chewbacca","R2-D2", "Darth Vader"];
-			
-		   function getArray(){
-
-			// storing our array as a string
-			localStorage.setItem("Starwars", JSON.stringify(characters));
-			
-			// show json object
-			document.getElementById("results1").innerHTML = 'Json File: ' + localStorage.getItem("Starwars");
-			   
-			// retrieving our data and converting it back into an array
-			var retrievedData = localStorage.getItem("Starwars");
-			var characters2 = JSON.parse(retrievedData);
-
-			//making sure it still is an array
-			document.getElementById("results2").innerHTML = 'Length Array: ' + characters2.length;
-			document.getElementById("results3").innerHTML = 'Array: ' + characters2;
-
-			
-		   }		   
+		   function removeList(){
+	            var parent = document.getElementById("DOM2");
+	            var item = document.getElementById("ul");
+	            
+		    if(item.parentNode){
+			item.parentNode.removeChild(node)
+		    }
+		    
 		</script>
 		
 		<script>
@@ -204,14 +193,11 @@ function getArray(){
 
       </code></pre>
 	    
-	<div class="col-md-12">
-		<button onclick="getArray()">Run Script</button><br /><br />
+	<div class="col-md-12" id= "DOM2">
+		<button onclick="removeList()">Run Script</button><br /><br />
 	</div>
 	<div class="col-md-12">
-		<h3>Results</h3>
-		<p id="results1"></p>
-		<p id="results2"></p>
-		<p id="results3"></p>
+		
 			
 	</div>	 
 	    
