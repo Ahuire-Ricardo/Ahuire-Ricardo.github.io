@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Api</title>
+		<title>DOM</title>
 
 		<meta charset="utf-8" />
 		
@@ -19,31 +19,26 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
-	           //Array List
+	     //Array List
 		   var memberList = ['Ricardo Ahuire','Jayton Birch','Ali Cope','Glen Sadler'];
 		   //Variable with Tittle for UL
 		   var nameList = "List of Member - Group #4 - CIT261";
 			
-		   function addList(){
+		   function addList(elementPage,idList){
 	            var h3 = document.createElement("h3");
 		    var ul = document.createElement("ul");
 		    ul.setAttribute("id","memberList");
 	            h3.innerHTML= nameList;
-
 		    var t, tt;
-		    document.getElementById("DOM1").appendChild(h3);
-		    document.getElementById("DOM1").appendChild(ul);
+		    document.getElementById(elementPage).appendChild(h3);
+		    document.getElementById(elementPage).appendChild(ul);
 		    memberList.forEach(renderMemberList);
-
 		    function renderMemberList(element, index, arr) {
 			var li = document.createElement("li");
 			li.setAttribute("class","item");
-			li.setAttribute("id","group");
-
+			li.setAttribute("id",idList);
 			ul.appendChild(li);
-
 			t = document.createTextNode(element);
-
 			li.innerHTML=li.innerHTML + element;
 		     }
 		    }
@@ -51,62 +46,29 @@
 		
 		<script>
 		   
-		   function removeList(){
-	            var list = document.getElementById("group");
+		   function removeList(elementPage,idList){
+	          var list = document.getElementById(idList);
 	            
-		    if (!list.childNodes[0]){
-			alert("The element not exist");   
-		    } else {
-	            	list.removeChild(list.childNodes[0]);
-		    }
-	           }
+            if (!list.childNodes[0]){
+                alert("The element not exist");   
+            } else {
+                    list.removeChild(list.childNodes[0]);
+            }
+	     }
 		    
 		</script>
 		
 		<script>
+		   function insertElement(elementPage,idList){
+          var newItem = document.createElement("LI");
+          var textnode = document.createTextNode("Brother Baer");
+          newItem.appendChild(textnode);
+                    
+          var sp2 = document.getElementById(idList);
+          sp2.insertBefore(newItem,sp2.childNodes[2]);
+         
+       }
 		   
-		   // our Associative array
-		   var apps = [
-			     {
-			      'id': 1,
-			      'title':'Gospel Library',
-			      'Genre':'Religion'
-			     },
-			     {
-			      'id': 2,
-			      'title':'Spotify',
-			      'Genre':'Music'
-			     },
-			     {
-			      'id': 3,
-			      'title':'Netflix',
-			      'Genre':'Movie and Series'
-			     },
-			     {
-			      'id': 4,
-			      'title':'Twitter',
-			      'Genre':'Social'
-			     }
-			    ];
-			
-		   function getAssociativeArray(){
-
-			// storing our array as a string
-			localStorage.setItem("AppsAndroid", JSON.stringify(apps));
-			
-			// show json object
-			document.getElementById("results4").innerHTML = 'Json File: ' + localStorage.getItem("AppsAndroid");
-			   
-			// retrieving our data and converting it back into an array
-			var retrievedData = localStorage.getItem("AppsAndroid");
-			var apps2 = JSON.parse(retrievedData);
-
-			//making sure it still is an array
-			document.getElementById("results5").innerHTML = 'Length Array: ' + apps2.length;
-			document.getElementById("results6").innerHTML = 'Array: ' + apps2[1].title;
-
-			
-		   }		   
 		</script>
 		
 	</head>
@@ -134,36 +96,37 @@
        
         <pre><code data-language="javascript">
 
+   //Array List
    var memberList = ['Ricardo Ahuire','Jayton Birch','Ali Cope','Glen Sadler'];
+   //Variable with Tittle for UL
    var nameList = "List of Member - Group #4 - CIT261";
-
-   function addList(){
-    var h3 = document.createElement("h3");
-    var ul = document.createElement("ul");
-    ul.setAttribute("id","memberList");
-    h3.innerHTML= nameList;
-
-    var t, tt;
-    document.getElementById("DOM1").appendChild(h3);
-    document.getElementById("DOM1").appendChild(ul);
-    memberList.forEach(renderMemberList);
-
-    function renderMemberList(element, index, arr) {
-	var li = document.createElement("li");
-	li.setAttribute("class","item");
-
-	ul.appendChild(li);
-
-	t = document.createTextNode(element);
-
-	li.innerHTML=li.innerHTML + element;
-     }
-    }
+			
+	function addList(elementPage,idList){
+          var h3 = document.createElement("h3");
+          var ul = document.createElement("ul");
+          ul.setAttribute("id","memberList");
+          h3.innerHTML= nameList;
+          var t, tt;
+          document.getElementById(elementPage).appendChild(h3);
+          document.getElementById(elementPage).appendChild(ul);
+          memberList.forEach(renderMemberList);
+          
+          function renderMemberList(element, index, arr) {
+            var li = document.createElement("li");
+            li.setAttribute("class","item");
+            li.setAttribute("id",idList);
+            ul.appendChild(li);
+            t = document.createTextNode(element);
+            li.innerHTML=li.innerHTML + element;
+           }
+	}
+  
+  
 
 	 </code></pre>
 	 
          <div class="col-md-12" id= "DOM1">
-		<button onclick="addList()">Run Script</button><br /><br />
+		<button onclick="addList('DOM1','list1')">Add List</button><br /><br />
 	</div>
 	<div class="col-md-12">
 		
@@ -172,19 +135,20 @@
 	<h2>removeChild</h2>
 	    
 	<pre><code data-language="javascript">	
-   function removeList(){
-    var list = document.getElementById("group");
+ function removeList(elementPage,idList){
+          var list = document.getElementById(idList);
 
-    if (!list.childNodes[0]){
-	alert("The element not exist");   
-    } else {
-	list.removeChild(list.childNodes[0]);
-    }
-   }
+          if (!list.childNodes[0]){
+              alert("The element not exist");   
+          } else {
+                  list.removeChild(list.childNodes[0]);
+          }
+  }
       </code></pre>
 	    
 	<div class="col-md-12" id= "DOM2">
-		<button onclick="removeList()">Run Script</button><br /><br />
+    <button onclick="addList('DOM2','list2')">Add List</button><br /><br />
+		<button onclick="removeList('DOM2','list2')">Remove Item</button><br /><br />
 	</div>
 	<div class="col-md-12">
 		
@@ -195,61 +159,26 @@
 	    
       <pre><code data-language="javascript">
       
-// our Associative array
-var apps = [
-     {
-      'id': 1,
-      'title':'Gospel Library',
-      'Genre':'Religion'
-     },
-     {
-      'id': 2,
-      'title':'Spotify',
-      'Genre':'Music'
-     },
-     {
-      'id': 3,
-      'title':'Netflix',
-      'Genre':'Movie and Series'
-     },
-     {
-      'id': 4,
-      'title':'Twitter',
-      'Genre':'Social'
-     }
-    ];
+function insertElement(elementPage,idList){
+    var newItem = document.createElement("LI");
+    var textnode = document.createTextNode("Brother Baer");
+    newItem.appendChild(textnode);
 
-function getAssociativeArray(){
+    var sp2 = document.getElementById(idList);
+    sp2.insertBefore(newItem,sp2.childNodes[2]);
 
-	// storing our array as a string
-	localStorage.setItem("AppsAndroid", JSON.stringify(apps));
-
-	// show json object
-	document.getElementById("results4").innerHTML = 'Json File: ' + localStorage.getItem("AppsAndroid");
-
-	// retrieving our data and converting it back into an array
-	var retrievedData = localStorage.getItem("AppsAndroid");
-	var apps2 = JSON.parse(retrievedData);
-
-	//making sure it still is an array
-	document.getElementById("results5").innerHTML = 'Length Array: ' + apps2.length;
-	document.getElementById("results6").innerHTML = 'Array: ' + apps2[0].title;
-
-
-}
+ }
       
       </code></pre>
 	    
-      <div class="col-md-12">
-		<button onclick="getAssociativeArray()">Run Script</button><br /><br />
+      <div class="col-md-12" id= "DOM3">
+		 <button onclick="addList('DOM3','list3')">Add List</button><br /><br />
+     <button onclick="insertElement('DOM3','list3')">Insert Item</button><br /><br />
 	</div>
 	<div class="col-md-12">
-		<h3>Results</h3>
-		<p id="results4"></p>
-		<p id="results5"></p>
-		<p id="results6"></p>
+		
 			
-      </div>	 
+ </div>	 
 	    
       
 	    
@@ -276,4 +205,3 @@ function getAssociativeArray(){
 
 	
 </html>
-
