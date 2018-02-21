@@ -58,7 +58,7 @@
       function obtainNumber(favoriteNumber, guess) {
           var number = ""; 
         
-	if (/^[0-9]\d*$/.test(favoriteNumber)) && (/^[0-9]\d*$/.test(guess)) {
+	if ((/^[0-9]\d*$/.test(favoriteNumber)) && (/^[0-9]\d*$/.test(guess))) {
           if (guess > favoriteNumber) {
              number = "Too high";
           }
