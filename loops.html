@@ -54,29 +54,43 @@
 		</script>
 		
 		<script>
+       
+      function obtainNumber(favoriteNumber, guess) {
+          var number = ""; 
+         
+          if (guess > favoriteNumber) {
+             number = "Too high";
+          }
+          else if (guess == favoriteNumber) {
+             number = "You got it!";
+          }
+          else {
+             number = "Too low";
+          }
+         
+          document.getElementById("result2").innerHTML = number;
+          
+        }
 		   
-		   function removeList(elementPage,idList){
-	          var list = document.getElementById(idList);
-	            
-            if (!list.childNodes[0]){
-                alert("The element not exist");   
-            } else {
-                    list.removeChild(list.childNodes[0]);
-            }
-	     }
-		    
 		</script>
 		
 		<script>
-		   function insertElement(elementPage,idList){
-          var newItem = document.createElement("LI");
-          var textnode = document.createTextNode("Brother Baer");
-          newItem.appendChild(textnode);
-                    
-          var sp2 = document.getElementById(idList);
-          sp2.insertBefore(newItem,sp2.childNodes[2]);
-         
-       }
+      function obtainArray(id)
+         {
+             var color = [];
+             color["black"] = "#000000";
+             color["white"] = "#ffffff";
+
+             if(id == "black")
+                 {
+                   document.getElementById("assocArr").innerHTML = 'color["black"] = ' + color["black"];
+                 }
+             if(id == "white")
+                 {
+                   document.getElementById("assocArr").innerHTML = 'color["white"] = ' + color["white"]; 
+                 }
+
+         }
 		   
 		</script>
 		
@@ -150,54 +164,66 @@ function calculateAverage() {
 	<h2>Conditional and Parameters</h2>
 	    
 	<pre><code data-language="javascript">	
- function removeList(elementPage,idList){
-          var list = document.getElementById(idList);
+function obtainNumber(favoriteNumber, guess) {
+  var number = ""; 
 
-          if (!list.childNodes[0]){
-              alert("The element not exist");   
-          } else {
-                  list.removeChild(list.childNodes[0]);
-          }
+  if (guess > favoriteNumber) {
+    number = "Too high";
   }
+  else if (guess == favoriteNumber) {
+     number = "You got it!";
+  }
+  else {
+     number = "Too low";
+  }
+
+  document.getElementById("result2").innerHTML = number;
+}
       </code></pre>
 	    
-	<div class="col-md-12" id= "DOM2">
-    <button onclick="addList('DOM2','list2')">Add List</button><br /><br />
-		<button onclick="removeList('DOM2','list2')">Remove Item</button><br /><br />
-	</div>
 	<div class="col-md-12">
-		
-			
+		<label>Enter Favorite Number: </lable> <input id="NumberA" type="text" value=""></input><br /><br />
+    <label>Enter Guess Number: </lable> <input id="NumberB" type="text" value=""></input><br /><br />
+    <button onclick="obtainNumber(document.getElementById('NumberA').value, document.getElementById('NumberB').value)">Result</button><br />
+    <h3>Results</h3>
+    <p id="result2"></p>
 	</div>	 
+  
 	    
       <h2>Associative Arrays</h2>
 	    
       <pre><code data-language="javascript">
       
-function insertElement(elementPage,idList){
-    var newItem = document.createElement("LI");
-    var textnode = document.createTextNode("Brother Baer");
-    newItem.appendChild(textnode);
+function obtainArray(id) {
+     var color = [];
+     color["black"] = "#000000";
+     color["white"] = "#ffffff";
 
-    var sp2 = document.getElementById(idList);
-    sp2.insertBefore(newItem,sp2.childNodes[2]);
+     if(id == "black")
+         {
+           document.getElementById("assocArr").innerHTML = 'color["black"] = ' + color["black"];
+         }
+     if(id == "white")
+         {
+           document.getElementById("assocArr").innerHTML = 'color["white"] = ' + color["white"]; 
+         }
 
  }
       
       </code></pre>
 	    
-      <div class="col-md-12" id= "DOM3">
-		 <button onclick="addList('DOM3','list3')">Add List</button><br /><br />
-     <button onclick="insertElement('DOM3','list3')">Insert Item</button><br /><br />
+  <div class="col-md-12" id= "DOM3">
+		 The color name on the button is passed through to the function to pull the value from the associative array with the color name as the key.<br>
+		 <button onclick="obtainArray(this.id)" id="black">black</button>
+     <button onclick="obtainArray(this.id)" id="white">white</button><br>
 	</div>
-	<div class="col-md-12">
-		
-			
- </div>	 
-	    
+      
+  <div id="assocArr"></div>
+   <br>
+		    
       
 	    
-      <h3>Sources:</h3>
+   <h3>Sources:</h3>
         <ul>
           <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
           <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
