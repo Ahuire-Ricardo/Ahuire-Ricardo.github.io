@@ -1,0 +1,22 @@
+[
+{
+"name": "Ricardo",
+"lastName": "Ahuire",
+"email": "ahu17001@byui.edu"
+},
+{
+"name": "Jayton",
+"lastName": "Birch",
+"email": "bir14016@byui.edu"
+},
+{
+"name": "Ali",
+"lastName": "Cope",
+"email": "cop17005@byui.edu"
+},
+{
+"name": "Glen",
+"lastName": "Sadler",
+"email": "sad15002@byui.edu"
+}
+]
