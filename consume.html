@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CONSUME</title>
+
+		<meta charset="utf-8" />
+		
+		<meta name="DESCRIPTION" content="CONSUME" />
+		<meta name="KEYWORDS" content="CIT 261, BYU-Idaho" />
+		<meta name="Author" content="Ricardo Ahuire" />
+		<meta name="School" content="BYU-Idaho" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+	        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+	        <link href="css/theme.css" rel="stylesheet" type="text/css">
+	        <script src="javascripts/rainbow.js"></script>
+	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+
+		<script>
+	     function calculateAverage() {
+	
+        var students = [['Ricardo Ahuire', 90], ['Jayton Birch', 98], ['Ali Cope', 92], ['Glen Sadler', 95]];
+
+        var average = 0;
+
+        for (var i=0; i < students.length; i++) {
+                average += students[i][1];
+                var avg = (average/students.length);
+        }
+
+        //document.getElementById("results1").innerHTML = "Average grade: " + (average)/students.length);
+         document.getElementById("result1").innerHTML = "Average grade: " + avg;
+
+                if (avg < 60){
+                  document.getElementById("result").innerHTML = "The average for group #4 : F";
+                } 
+                else if (avg < 70) {
+                  document.getElementById("result").innerHTML = "The average for group #4 : D"; 
+                } 
+                else if (avg < 80) {
+                  document.getElementById("result").innerHTML = "The average for group #4 : C"; 
+                }
+                else if (avg < 90) {
+                  document.getElementById("result").innerHTML = "The average for group #4 : B"; 
+                }
+                else if (avg < 100) {
+                  document.getElementById("result").innerHTML = "The average for group #4 : A"; 
+                }
+        }
+      
+        
+		</script>
+		
+		<script>
+       
+      function obtainNumber(favoriteNumber, guess) {
+          var number = ""; 
+        
+	if ((/^[0-9]\d*$/.test(favoriteNumber)) && (/^[0-9]\d*$/.test(guess))) {
+          alert('hola');
+          if (guess > favoriteNumber) {
+             number = "Too high";
+          }
+          else if (guess == favoriteNumber) {
+             number = "You got it!";
+          }
+          else {
+             number = "Too low";
+          }
+	         
+          document.getElementById("result2").innerHTML = number;
+  } else{
+	  document.getElementById("result2").innerHTML = "That is a invalid number";	
+	}		
+          
+      }
+		   
+		</script>
+		
+		<script>
+      function obtainArray(id)
+         {
+             var color = [];
+             color["black"] = "#000000";
+             color["white"] = "#ffffff";
+
+             if(id == "black")
+                 {
+                   document.getElementById("assocArr").innerHTML = 'color["black"] = ' + color["black"];
+                 }
+             if(id == "white")
+                 {
+                   document.getElementById("assocArr").innerHTML = 'color["white"] = ' + color["white"]; 
+                 }
+
+         }
+		   
+		</script>
+		
+	</head>
+	
+	<body>
+    <section class="page-header">
+      <h1 class="project-name">Ricardo Ahuire</h1>
+      <h2 class="project-tagline">Using XMLHTTPRequest to Consume a JSON Web Service</h2>
+
+     <nav id="primary_nav_wrap">
+          <ul>
+            <li class="current-menu-item"><a href="https://ahuire-ricardo.github.io">Home</a></li>
+           
+    </section>
+
+    <section class="main-content">
+       <h2>Document Object Model (DOM)</h2>
+	    <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page
+	       so that programs can change the document structure, style, and content. The DOM represents the document as <b>nodes
+	    and objects </b>. That way, programming languages can connect to the page.</p>
+	     <p>The DOM <b>is not a programming language</b>, but without it, the JavaScript language wouldn't have any model or notion
+		of web pages, HTML documents, XML documents, and their component parts (e.g. elements). </p>
+	    
+	<h2>Loops, Arrays, Variables</h2>    
+       
+ <pre><code data-language="javascript">
+
+function calculateAverage() {
+
+  var students = [['Ricardo Ahuire', 90], ['Jayton Birch', 98], ['Ali Cope', 92], ['Glen Sadler', 95]];
+
+  var average = 0;
+
+  for (var i=0; i < students.length; i++) {
+          average += students[i][1];
+          var avg = (average/students.length);
+  }
+
+  document.getElementById("result1").innerHTML = "Average grade: " + avg;
+
+          if (avg < 60){
+            document.getElementById("result").innerHTML = "The average for group #4 : F";
+          } 
+          else if (avg < 70) {
+            document.getElementById("result").innerHTML = "The average for group #4 : D"; 
+          } 
+          else if (avg < 80) {
+            document.getElementById("result").innerHTML = "The average for group #4 : C"; 
+          }
+          else if (avg < 90) {
+            document.getElementById("result").innerHTML = "The average for group #4 : B"; 
+          }
+          else if (avg < 100) {
+            document.getElementById("result").innerHTML = "The average for group #4 : A"; 
+          }
+  }
+
+
+	 </code></pre>
+	 
+  <div class="col-md-12">
+		<button onclick="calculateAverage()">Average</button><br />
+    <h3>Results</h3>
+    <p id="result1"></p>
+    <p id="result"></p>
+    
+	</div>
+
+	    
+	<h2>Conditional and Parameters</h2>
+	    
+	<pre><code data-language="javascript">	
+function obtainNumber(favoriteNumber, guess) {
+  var number = ""; 
+
+  if (guess > favoriteNumber) {
+    number = "Too high";
+  }
+  else if (guess == favoriteNumber) {
+     number = "You got it!";
+  }
+  else {
+     number = "Too low";
+  }
+
+  document.getElementById("result2").innerHTML = number;
+}
+      </code></pre>
+	    
+	<div class="col-md-12">
+		<label>Enter Favorite Number: </lable> <input id="NumberA" type="text" value=""></input><br /><br />
+    <label>Enter Guess Number: </lable> <input id="NumberB" type="text" value=""></input><br /><br />
+    <button onclick="obtainNumber(document.getElementById('NumberA').value, document.getElementById('NumberB').value)">Result</button><br />
+    <h3>Results</h3>
+    <p id="result2"></p>
+	</div>	 
+  
+	    
+      <h2>Associative Arrays</h2>
+	    
+      <pre><code data-language="javascript">
+      
+function obtainArray(id) {
+     var color = [];
+     color["black"] = "#000000";
+     color["white"] = "#ffffff";
+
+     if(id == "black")
+         {
+           document.getElementById("assocArr").innerHTML = 'color["black"] = ' + color["black"];
+         }
+     if(id == "white")
+         {
+           document.getElementById("assocArr").innerHTML = 'color["white"] = ' + color["white"]; 
+         }
+
+ }
+      
+      </code></pre>
+	    
+  <div class="col-md-12" id= "DOM3">
+		 The color name on the button is passed through to the function to pull the value from the associative array with the color name as the key.<br>
+		 <button onclick="obtainArray(this.id)" id="black">black</button>
+     <button onclick="obtainArray(this.id)" id="white">white</button><br>
+	</div>
+      
+  <div id="assocArr"></div>
+   <br>
+		    
+      
+	    
+   <h3>Sources:</h3>
+        <ul>
+          <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
+          <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
+	  <li><a href="https://javascript.info/json">Javascript.info</a></li>
+	  <li><a href="https://www.javascript.com/resources">javascript.com</a></li>
+	  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage">developer.mozilla.org</a></li>
+	  <li><a href="https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm">kirupa.com</a></li>
+        </ul>
+
+      <footer class="site-footer">
+
+        <h6><span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></h6>
+      </footer>
+
+    </section>
+
+  
+  </body>
+
+
+	
+</html>
