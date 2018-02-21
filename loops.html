@@ -57,7 +57,8 @@
        
       function obtainNumber(favoriteNumber, guess) {
           var number = ""; 
-         
+        
+	if ((/^[0-9]\d*$/.test(favoriteNumber)) || (/^[0-9]\d*$/.test(guess))) {
           if (guess > favoriteNumber) {
              number = "Too high";
           }
@@ -67,10 +68,13 @@
           else {
              number = "Too low";
           }
-         
+	         
           document.getElementById("result2").innerHTML = number;
+        else{
+	  document.getElementById("result2").innerHTML = "That is a invalid number";	
+	}		
           
-        }
+      }
 		   
 		</script>
 		
@@ -108,14 +112,12 @@
     </section>
 
     <section class="main-content">
-       <h2>Document Object Model (DOM)</h2>
-	    <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page
-	       so that programs can change the document structure, style, and content. The DOM represents the document as <b>nodes
-	    and objects </b>. That way, programming languages can connect to the page.</p>
-	     <p>The DOM <b>is not a programming language</b>, but without it, the JavaScript language wouldn't have any model or notion
-		of web pages, HTML documents, XML documents, and their component parts (e.g. elements). </p>
+       	    <p>they are programming sentences that we use anywhere in our javascript code to be able to make decisions, present a set 
+	       of data or reuse code to make our programs more efficient. </p>
 	    
 	<h2>Loops, Arrays, Variables</h2>    
+	<p>This program returns the average grade of a group and the grade obtained, for this we use an arrangement of students and their
+           notes and a loop sentence to go through the arrangement and deposit the result in variables.</p>
        
  <pre><code data-language="javascript">
 
@@ -153,7 +155,7 @@ function calculateAverage() {
 	 </code></pre>
 	 
   <div class="col-md-12">
-		<button onclick="calculateAverage()">Average</button><br />
+  <button onclick="calculateAverage()">Average</button><br />
     <h3>Results</h3>
     <p id="result1"></p>
     <p id="result"></p>
@@ -162,6 +164,7 @@ function calculateAverage() {
 
 	    
 	<h2>Conditional and Parameters</h2>
+	<p>This program compares two numbers and determines if it is greater, less or equal by means of a conditional sentence.</p>
 	    
 	<pre><code data-language="javascript">	
 function obtainNumber(favoriteNumber, guess) {
@@ -191,6 +194,7 @@ function obtainNumber(favoriteNumber, guess) {
   
 	    
       <h2>Associative Arrays</h2>
+      <p>This program shows a color and its respective code using an associative Array.</p>
 	    
       <pre><code data-language="javascript">
       
