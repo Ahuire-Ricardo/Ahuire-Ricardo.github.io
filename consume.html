@@ -18,42 +18,25 @@
 	        <script src="javascripts/rainbow.js"></script>
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
-		<script>
-	     function calculateAverage() {
-	
-        var students = [['Ricardo Ahuire', 90], ['Jayton Birch', 98], ['Ali Cope', 92], ['Glen Sadler', 95]];
-
-        var average = 0;
-
-        for (var i=0; i < students.length; i++) {
-                average += students[i][1];
-                var avg = (average/students.length);
-        }
-
-        //document.getElementById("results1").innerHTML = "Average grade: " + (average)/students.length);
-         document.getElementById("result1").innerHTML = "Average grade: " + avg;
-
-                if (avg < 60){
-                  document.getElementById("result").innerHTML = "The average for group #4 : F";
-                } 
-                else if (avg < 70) {
-                  document.getElementById("result").innerHTML = "The average for group #4 : D"; 
-                } 
-                else if (avg < 80) {
-                  document.getElementById("result").innerHTML = "The average for group #4 : C"; 
+<script>
+	function ajaxify(id)
+                {
+                    var request = new XMLHttpRequest();
+                    request.onreadystatechange = function() 
+                    {
+                        if(this.readyState == 4 && this.status == 200)
+                            {
+                                document.getElementById("ajax").innerHTML = this.responseText;
+                            }
+                    }
+                    request.open("GET",id + ".json",true);
+                    request.send();
                 }
-                else if (avg < 90) {
-                  document.getElementById("result").innerHTML = "The average for group #4 : B"; 
-                }
-                else if (avg < 100) {
-                  document.getElementById("result").innerHTML = "The average for group #4 : A"; 
-                }
-        }
       
         
-		</script>
-		
-		<script>
+</script>
+
+<script>
        
       function obtainNumber(favoriteNumber, guess) {
           var number = ""; 
