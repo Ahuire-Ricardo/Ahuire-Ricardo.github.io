@@ -19,70 +19,39 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 <script>
-	function ajaxify(id)
-                {
-                    var request = new XMLHttpRequest();
-                    request.onreadystatechange = function() 
-                    {
-                        if(this.readyState == 4 && this.status == 200)
-                            {
-                                document.getElementById("ajax").innerHTML = this.responseText;
-                            }
-                    }
-                    request.open("GET",id + ".json",true);
-                    request.send();
-                }
+	function showGroupList(position) {
+	
+    var xmlhttp = new XMLHttpRequest();
+    var url = "groupJson.txt";
+
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+      }
+    };
+    
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(arr) {
+      var list = document.getElementById("groupList");
+      var i;
+     
+      arr.forEach(function(arr) {
+        var entry = document.createElement("li");
+        entry.appendChild(document.createTextNode('student: ' + arr.name + ' ' + arr.lastName + ',  Email: ' + arr.email));
+        list.appendChild(entry);
+
+      })
       
-        
+    }
+	
+}
+            
 </script>
 
-<script>
-       
-      function obtainNumber(favoriteNumber, guess) {
-          var number = ""; 
-        
-	if ((/^[0-9]\d*$/.test(favoriteNumber)) && (/^[0-9]\d*$/.test(guess))) {
-          alert('hola');
-          if (guess > favoriteNumber) {
-             number = "Too high";
-          }
-          else if (guess == favoriteNumber) {
-             number = "You got it!";
-          }
-          else {
-             number = "Too low";
-          }
-	         
-          document.getElementById("result2").innerHTML = number;
-  } else{
-	  document.getElementById("result2").innerHTML = "That is a invalid number";	
-	}		
-          
-      }
-		   
-		</script>
-		
-		<script>
-      function obtainArray(id)
-         {
-             var color = [];
-             color["black"] = "#000000";
-             color["white"] = "#ffffff";
-
-             if(id == "black")
-                 {
-                   document.getElementById("assocArr").innerHTML = 'color["black"] = ' + color["black"];
-                 }
-             if(id == "white")
-                 {
-                   document.getElementById("assocArr").innerHTML = 'color["white"] = ' + color["white"]; 
-                 }
-
-         }
-		   
-		</script>
-		
-	</head>
+</head>
 	
 	<body>
     <section class="page-header">
@@ -96,122 +65,55 @@
     </section>
 
     <section class="main-content">
-       <h2>Document Object Model (DOM)</h2>
-	    <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page
-	       so that programs can change the document structure, style, and content. The DOM represents the document as <b>nodes
-	    and objects </b>. That way, programming languages can connect to the page.</p>
-	     <p>The DOM <b>is not a programming language</b>, but without it, the JavaScript language wouldn't have any model or notion
-		of web pages, HTML documents, XML documents, and their component parts (e.g. elements). </p>
+      <p>XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server.
+         The object is provided by the browser's JavaScript environment.The use of this API is practical to load catalogs for example
+         without having to reload the web page.</p>
+	    <p>Particularly, retrieval of data from XHR for the purpose of continually modifying a loaded web page is the underlying concept 
+         of <b>Ajax design</b> (Asynchronous JavaScript And XML). </p>
 	    
-	<h2>Loops, Arrays, Variables</h2>    
-       
+	     
  <pre><code data-language="javascript">
+  function showGroupList(position) {
+	
+    var xmlhttp = new XMLHttpRequest();
+    var url = "groupJson.txt";
 
-function calculateAverage() {
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+      }
+    };
+    
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 
-  var students = [['Ricardo Ahuire', 90], ['Jayton Birch', 98], ['Ali Cope', 92], ['Glen Sadler', 95]];
+    function myFunction(arr) {
+      var list = document.getElementById("groupList");
+      var i;
+     
+      arr.forEach(function(arr) {
+        var entry = document.createElement("li");
+        entry.appendChild(document.createTextNode('student: ' + arr.name + ' ' + arr.lastName + ',  Email: ' + arr.email));
+        list.appendChild(entry);
 
-  var average = 0;
-
-  for (var i=0; i < students.length; i++) {
-          average += students[i][1];
-          var avg = (average/students.length);
-  }
-
-  document.getElementById("result1").innerHTML = "Average grade: " + avg;
-
-          if (avg < 60){
-            document.getElementById("result").innerHTML = "The average for group #4 : F";
-          } 
-          else if (avg < 70) {
-            document.getElementById("result").innerHTML = "The average for group #4 : D"; 
-          } 
-          else if (avg < 80) {
-            document.getElementById("result").innerHTML = "The average for group #4 : C"; 
-          }
-          else if (avg < 90) {
-            document.getElementById("result").innerHTML = "The average for group #4 : B"; 
-          }
-          else if (avg < 100) {
-            document.getElementById("result").innerHTML = "The average for group #4 : A"; 
-          }
-  }
-
-
-	 </code></pre>
+      })
+      
+    }
+	
+}
+ </code></pre>
 	 
   <div class="col-md-12">
-		<button onclick="calculateAverage()">Average</button><br />
-    <h3>Results</h3>
-    <p id="result1"></p>
-    <p id="result"></p>
-    
+    <ol id="groupList">
+		</ol>
+			
+		<button type="button" onclick="showGroupList()">Display Shopping List</button>
+		
+		
 	</div>
 
-	    
-	<h2>Conditional and Parameters</h2>
-	    
-	<pre><code data-language="javascript">	
-function obtainNumber(favoriteNumber, guess) {
-  var number = ""; 
-
-  if (guess > favoriteNumber) {
-    number = "Too high";
-  }
-  else if (guess == favoriteNumber) {
-     number = "You got it!";
-  }
-  else {
-     number = "Too low";
-  }
-
-  document.getElementById("result2").innerHTML = number;
-}
-      </code></pre>
-	    
-	<div class="col-md-12">
-		<label>Enter Favorite Number: </lable> <input id="NumberA" type="text" value=""></input><br /><br />
-    <label>Enter Guess Number: </lable> <input id="NumberB" type="text" value=""></input><br /><br />
-    <button onclick="obtainNumber(document.getElementById('NumberA').value, document.getElementById('NumberB').value)">Result</button><br />
-    <h3>Results</h3>
-    <p id="result2"></p>
-	</div>	 
-  
-	    
-      <h2>Associative Arrays</h2>
-	    
-      <pre><code data-language="javascript">
-      
-function obtainArray(id) {
-     var color = [];
-     color["black"] = "#000000";
-     color["white"] = "#ffffff";
-
-     if(id == "black")
-         {
-           document.getElementById("assocArr").innerHTML = 'color["black"] = ' + color["black"];
-         }
-     if(id == "white")
-         {
-           document.getElementById("assocArr").innerHTML = 'color["white"] = ' + color["white"]; 
-         }
-
- }
-      
-      </code></pre>
-	    
-  <div class="col-md-12" id= "DOM3">
-		 The color name on the button is passed through to the function to pull the value from the associative array with the color name as the key.<br>
-		 <button onclick="obtainArray(this.id)" id="black">black</button>
-     <button onclick="obtainArray(this.id)" id="white">white</button><br>
-	</div>
-      
-  <div id="assocArr"></div>
-   <br>
-		    
-      
-	    
-   <h3>Sources:</h3>
+	 <h3>Sources:</h3>
         <ul>
           <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
           <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
