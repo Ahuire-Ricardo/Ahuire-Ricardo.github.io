@@ -28,7 +28,6 @@
   p#awesome {
       
       font-family: futura;
-      font-style: italic;
       color:black;
       position: absolute;
       -webkit-animation:colorchange 20s infinite alternate;
@@ -76,7 +75,7 @@
       -webkit-animation-iteration-count: infinite;
       position:absolute;
       left:40%;
-      top:250%; 
+      top:350%; 
   }
   #button {
     width:130px;
@@ -274,12 +273,12 @@
     </section>
 
     <section class="main-content">
-      <p>XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server.
-         The object is provided by the browser's JavaScript environment.The use of this API is practical to load catalogs for example
-         without having to reload the web page.</p>
-	    <p>Particularly, retrieval of data from XHR for the purpose of continually modifying a loaded web page is the underlying concept 
-         of <b>Ajax design</b> (Asynchronous JavaScript And XML). </p>
-	    
+      <h2>Transitions</h2>
+      <p>A transition occurs when an element changes from one state to another, and the browser fills in that state change with a sequence 
+	  of in-between frames. It has a beginning and an end state.</p>
+      <p>CSS animations don’t need a trigger. They can respond to a trigger, but one isn’t needed to start the animation. Animations can run
+	 automatically when the page first loads. If you need your elements to change or move automatically, you have only one choice: animations. </p>
+          
 	     
  <pre><code data-language="javascript">
   function changeBG(el,el1,clr,clr1){
@@ -296,7 +295,7 @@
     <ol id="groupList">
 		</ol>
 			
-		<button onclick="changeBG('box1','awesome','#F0F','#0C0')">Magenta</button>
+    <button onclick="changeBG('box1','awesome','#F0F','#0C0')">Magenta</button>
     <button onclick="changeBG('box1','awesome','#0C0','#9DCEFF')">Green</button>
     <button onclick="changeBG('box1','awesome','#9DCEFF','#9DCEFF')">Origninal</button></br></br>
        <div id="box1"><p id="awesome">This box changes color when you </br>
@@ -304,8 +303,13 @@
 	                              at the top. </p></div>
 		
 		
-	</div>
-  
+  </div>
+
+  <h2>Animations</h2>
+      <p>CSS Animations are a more powerful alternative to transitions. Rather than rely on a change from one beginning state to an end state,
+	 animations can be made up of as many in-between states as you like, and offer more control over how the states are animated.</p>
+      <p>Transitions require a trigger to run. The trigger may be one of the events listed in the last section or it might be JavaScript,
+	 but the transition needs something outside itself to start.</p>
   <pre><code data-language="javascript">
    function animation() {
       var elem = document.getElementById('colorBox');
