@@ -1,1 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>TRANSITION</title>
 
+		<meta charset="utf-8" />
+		
+		<meta name="DESCRIPTION" content="TRANSITION" />
+		<meta name="KEYWORDS" content="CIT 261, BYU-Idaho" />
+		<meta name="Author" content="Ricardo Ahuire" />
+		<meta name="School" content="BYU-Idaho" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+	        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+	        <link href="css/theme.css" rel="stylesheet" type="text/css">
+	        <script src="javascripts/rainbow.js"></script>
+	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+
+<style>
+  div#box1 {
+    background: #9DCEFF;
+    width: 300px;
+    height: 150px;
+  }
+  
+  p#awesome {
+      
+      font-family: futura;
+      font-style: italic;
+      color:black;
+      position: absolute;
+      -webkit-animation:colorchange 20s infinite alternate;
+  }
+  
+  @-webkit-keyframes rotate {
+    0% {
+        -webkit-transform:translate(100px, 100px) rotate(0deg) translate(-100px, -100px) rotate(0deg);
+        background-color:red;
+    }  
+    13% {
+          -webkit-transform:translate(100px, 100px) rotate(45deg) translate(-100px, -100px) rotate(-45deg);
+    }
+    25% {
+        -webkit-transform:translate(100px, 100px) rotate(90deg) translate(-100px, -100px) rotate(-90deg);
+    }
+    38% {
+        -webkit-transform:translate(100px, 100px) rotate(135deg) translate(-100px, -100px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform:translate(100px, 100px) rotate(180deg) translate(-100px, -100px) rotate(-180deg);
+    }
+    63% {
+        -webkit-transform:translate(100px, 100px) rotate(225deg) translate(-100px, -100px) rotate(225deg);
+    }
+    75% {
+        -webkit-transform:translate(100px, 100px) rotate(270deg) translate(-100px, -100px) rotate(-270deg);
+    }
+    88% {
+        -webkit-transform:translate(100px, 100px) rotate(315deg) translate(-100px, -100px) rotate(315deg);
+    }
+      100% {
+          -webkit-transform:translate(100px, 100px) rotate(360deg) translate(-100px, -100px) rotate(-360deg);
+      }
+  }
+  
+  #circle {
+      height: 50px;
+      width: 50px;
+      border-radius:25px;
+      background-color: teal;
+      -webkit-animation-duration: 4s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-name:"rotate";
+      -webkit-animation-iteration-count: infinite;
+      position:absolute;
+      left:40%;
+      top:150%; 
+  }
+  #button {
+    width:130px;
+    background:teal;
+  }
+</style>
+    
+<script>
+	function changeBG(el,el1,clr,clr1){
+    var elem = document.getElementById(el);
+    var elem1 = document.getElementById(el1);
+    elem.style.transition = "background 1.0s linear 0s";
+    elem1.style.transition = "color 1.0s linear 0s";
+    elem.style.background = clr;
+    elem1.style.background = clr1;
+  }
+  
+  function animation() {
+    var elem = document.getElementById('colorBox');
+    elem.style.transition = "width 2s";
+    elem.style.width = "300px";
+
+    setTimeout(function() {
+    elem.style.transition = "width 2s";
+    elem.style.width = "100px";
+
+    }, 2000);
+  }
+  
+  // Allows elements to be accessed in a clean way
+    var circle = document.getElementById('circle'), 
+        button = document.getElementById('button');
+
+        // Gets element to show current percentage
+    var result = document.getElementById('result'),
+        // Current position of circle around its path
+        // in percent in reference to the original
+        totalCurrentPercent = 0,
+        // Percent of circle around its path in
+        // percent in reference to the latest origin
+        currentPercent = 0;
+
+    // Updates the percent change from the latest origin
+    var showPercent = window.setInterval(function() {
+      if(currentPercent < 100)
+      {
+        currentPercent += 1;
+      }
+      else {
+        currentPercent = 0;
+      }
+      result.innerHTML = currentPercent;
+    }, 39); // Runs at a rate based on the animation's
+            // duration (milliseconds / 100)
+
+
+
+    // Checks to see if the specified rule is within 
+    // any of the stylesheets found in the document;
+    // returns the animation object if so
+    function findKeyframesRule(rule) {
+        var ss = document.styleSheets;
+        for (var i = 0; i < ss.length; ++i) {
+            for (var j = 0; j < ss[i].cssRules.length; ++j) {
+                if (ss[i].cssRules[j].type == window.CSSRule.WEBKIT_KEYFRAMES_RULE && ss[i].cssRules[j].name == rule) { return ss[i].cssRules[j]; }
+            }
+        }
+        return null;
+    }
+
+    // Replaces the animation based on the percent
+    // when activated and other hard coded 
+    // specifications
+    function change(anim) {
+      // Obtains the animation object of the specified
+      // animation
+      var keyframes = findKeyframesRule(anim),
+          length = keyframes.cssRules.length;
+
+      // Makes an array of the current percent values
+      // in the animation
+      var keyframeString = [];  
+      for(var i = 0; i < length; i ++)
+      {
+        keyframeString.push(keyframes[i].keyText);
+      }
+
+
+      // Removes all the % values from the array so
+      // the getClosest function can perform calculations
+      var keys = keyframeString.map(function(str) {
+        return str.replace('%', '');
+      });
+
+      // Updates the current position of the circle to
+      // be used in the calculations
+      totalCurrentPercent += currentPercent;
+      if(totalCurrentPercent > 100)
+      {
+        totalCurrentPercent -= 100;
+      }
+      // Self explanatory variables if you read the
+      // description of getClosest
+      var closest = getClosest(keys);
+
+      var position = keys.indexOf(closest), 
+          firstPercent = keys[position];
+
+      // Removes the current rules of the specified 
+      // animation
+      for(var i = 0, j = keyframeString.length; i < j; i ++)
+      {
+        keyframes.deleteRule(keyframeString[i]);
+      }
+
+      // Turns the percent when activated into the
+      // corresponding degree of a circle
+      var multiplier = firstPercent * 3.6;
+
+      // Essentially this creates the rules to set a new 
+      // origin for the path based on the approximated
+      // percent of the animation when activated and
+      // increases the diameter of the new circular path  
+      keyframes.insertRule("0% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 0) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 0) + "deg); background-color:red; }");
+      keyframes.insertRule("13% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 45) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 45) + "deg); }");
+      keyframes.insertRule("25% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 90) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 90) + "deg); }");
+      keyframes.insertRule("38% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 135) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 135) + "deg); }");
+      keyframes.insertRule("50% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 180) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 180) + "deg); }");
+      keyframes.insertRule("63% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 225) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 225) + "deg); }");
+      keyframes.insertRule("75% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 270) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 270) + "deg); }");
+      keyframes.insertRule("88% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 315) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 315) + "deg); }");
+      keyframes.insertRule("100% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 360) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 360) + "deg); }");
+
+      // Shows the circle again
+      circle.style.display = "inherit";
+      // Sets the animation to the newly specified rules 
+      circle.style.webkitAnimationName = anim; 
+
+      // Resets the approximate animation percent counter
+      window.clearInterval(showPercent);
+      currentPercent = 0;
+      showPercent = self.setInterval(function() {
+        if(currentPercent < 100)
+        {
+          currentPercent += 1;
+        }
+        else {
+          currentPercent = 0;
+        }
+        result.innerHTML = currentPercent;
+      }, 39); 
+    }
+
+    // Attatches the change function to the button's
+    // onclick function
+    button.onclick = function() {
+      // Removes the animation so a new one can be set
+      circle.style.webkitAnimationName = "none";
+      // Temporarily hides the circle
+      circle.style.display = "none";
+      // Initializes change function
+      setTimeout(function () { 
+          change("rotate"); 
+      }, 0);
+    }
+
+    // Gets the animation's closest % value based on
+    // the approximated % found below
+    function getClosest(keyframe) {
+      var curr = keyframe[0];
+      var diff = Math.abs (totalCurrentPercent - curr);
+      for (var val = 0, j = keyframe.length; val < j; val++) {
+        var newdiff = Math.abs(totalCurrentPercent - keyframe[val]);
+        if (newdiff < diff) {
+          diff = newdiff;
+          curr = keyframe[val];
+         }
+      }
+      return curr;
+    }
+           
+</script>
+
+</head>
+	
+	<body>
+    <section class="page-header">
+      <h1 class="project-name">Ricardo Ahuire</h1>
+      <h2 class="project-tagline">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</h2>
+
+     <nav id="primary_nav_wrap">
+          <ul>
+            <li class="current-menu-item"><a href="https://ahuire-ricardo.github.io">Home</a></li>
+           
+    </section>
+
+    <section class="main-content">
+      <p>XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server.
+         The object is provided by the browser's JavaScript environment.The use of this API is practical to load catalogs for example
+         without having to reload the web page.</p>
+	    <p>Particularly, retrieval of data from XHR for the purpose of continually modifying a loaded web page is the underlying concept 
+         of <b>Ajax design</b> (Asynchronous JavaScript And XML). </p>
+	    
+	     
+ <pre><code data-language="javascript">
+  function changeBG(el,el1,clr,clr1){
+    var elem = document.getElementById(el);
+    var elem1 = document.getElementById(el1);
+    elem.style.transition = "background 1.0s linear 0s";
+    elem1.style.transition = "color 1.0s linear 0s";
+    elem.style.background = clr;
+    elem1.style.background = clr1;
+  }
+ </code></pre>
+	 
+  <div class="col-md-12">
+    <ol id="groupList">
+		</ol>
+			
+		<button onclick="changeBG('box1','awesome','#F0F','#0C0')">Magenta</button>
+    <button onclick="changeBG('box1','awesome','#0C0','#9DCEFF')">Green</button>
+    <button onclick="changeBG('box1','awesome','#9DCEFF','#9DCEFF')">Origninal</button></br></br>
+       <div id="box1"><p id="awesome">This box changes color when you press any </br>
+      of the three buttons at the top. </p></div>
+		
+		
+	</div>
+  
+  <pre><code data-language="javascript">
+   function animation() {
+      var elem = document.getElementById('colorBox');
+      elem.style.transition = "width 2s";
+      elem.style.width = "300px";
+
+      setTimeout(function() {
+      elem.style.transition = "width 2s";
+      elem.style.width = "100px";
+
+      }, 2000);
+    }
+ </code></pre>
+  
+  <div class="col-md-12">
+			<p> 
+			This function calls problem2() It grows and shrinks the Green Div Box.
+            </p>
+			<br>
+            
+			<div id="colorBox" style="background: #9DCEFF; width:100px; height:100px;"></div>
+			
+			<br><button onclick="animation()">Magic!</button>
+	</div>
+  
+  <pre><code data-language="javascript">
+       // Allows elements to be accessed in a clean way
+    var circle = document.getElementById('circle'), 
+        button = document.getElementById('button');
+
+        // Gets element to show current percentage
+    var result = document.getElementById('result'),
+        // Current position of circle around its path
+        // in percent in reference to the original
+        totalCurrentPercent = 0,
+        // Percent of circle around its path in
+        // percent in reference to the latest origin
+        currentPercent = 0;
+
+    // Updates the percent change from the latest origin
+    var showPercent = window.setInterval(function() {
+      if(currentPercent < 100)
+      {
+        currentPercent += 1;
+      }
+      else {
+        currentPercent = 0;
+      }
+      result.innerHTML = currentPercent;
+    }, 39); // Runs at a rate based on the animations
+            // duration (milliseconds / 100)
+
+
+
+    // Checks to see if the specified rule is within 
+    // any of the stylesheets found in the document;
+    // returns the animation object if so
+    function findKeyframesRule(rule) {
+        var ss = document.styleSheets;
+        for (var i = 0; i < ss.length; ++i) {
+            for (var j = 0; j < ss[i].cssRules.length; ++j) {
+                if (ss[i].cssRules[j].type == window.CSSRule.WEBKIT_KEYFRAMES_RULE && ss[i].cssRules[j].name == rule) { return ss[i].cssRules[j]; }
+            }
+        }
+        return null;
+    }
+
+    // Replaces the animation based on the percent
+    // when activated and other hard coded 
+    // specifications
+    function change(anim) {
+      // Obtains the animation object of the specified
+      // animation
+      var keyframes = findKeyframesRule(anim),
+          length = keyframes.cssRules.length;
+
+      // Makes an array of the current percent values
+      // in the animation
+      var keyframeString = [];  
+      for(var i = 0; i < length; i ++)
+      {
+        keyframeString.push(keyframes[i].keyText);
+      }
+
+
+      // Removes all the % values from the array so
+      // the getClosest function can perform calculations
+      var keys = keyframeString.map(function(str) {
+        return str.replace('%', '');
+      });
+
+      // Updates the current position of the circle to
+      // be used in the calculations
+      totalCurrentPercent += currentPercent;
+      if(totalCurrentPercent > 100)
+      {
+        totalCurrentPercent -= 100;
+      }
+      // Self explanatory variables if you read the
+      // description of getClosest
+      var closest = getClosest(keys);
+
+      var position = keys.indexOf(closest), 
+          firstPercent = keys[position];
+
+      // Removes the current rules of the specified 
+      // animation
+      for(var i = 0, j = keyframeString.length; i < j; i ++)
+      {
+        keyframes.deleteRule(keyframeString[i]);
+      }
+
+      // Turns the percent when activated into the
+      // corresponding degree of a circle
+      var multiplier = firstPercent * 3.6;
+
+      // Essentially this creates the rules to set a new 
+      // origin for the path based on the approximated
+      // percent of the animation when activated and
+      // increases the diameter of the new circular path  
+      keyframes.insertRule("0% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 0) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 0) + "deg); background-color:red; }");
+      keyframes.insertRule("13% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 45) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 45) + "deg); }");
+      keyframes.insertRule("25% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 90) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 90) + "deg); }");
+      keyframes.insertRule("38% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 135) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 135) + "deg); }");
+      keyframes.insertRule("50% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 180) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 180) + "deg); }");
+      keyframes.insertRule("63% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 225) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 225) + "deg); }");
+      keyframes.insertRule("75% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 270) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 270) + "deg); }");
+      keyframes.insertRule("88% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 315) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 315) + "deg); }");
+      keyframes.insertRule("100% { -webkit-transform: translate(100px,100px) rotate(" + (multiplier + 360) + "deg) translate(-100px,-100px) rotate(" + (multiplier + 360) + "deg); }");
+
+      // Shows the circle again
+      circle.style.display = "inherit";
+      // Sets the animation to the newly specified rules 
+      circle.style.webkitAnimationName = anim; 
+
+      // Resets the approximate animation percent counter
+      window.clearInterval(showPercent);
+      currentPercent = 0;
+      showPercent = self.setInterval(function() {
+        if(currentPercent < 100)
+        {
+          currentPercent += 1;
+        }
+        else {
+          currentPercent = 0;
+        }
+        result.innerHTML = currentPercent;
+      }, 39); 
+    }
+
+    // Attatches the change function to the button's
+    // onclick function
+    button.onclick = function() {
+      // Removes the animation so a new one can be set
+      circle.style.webkitAnimationName = "none";
+      // Temporarily hides the circle
+      circle.style.display = "none";
+      // Initializes change function
+      setTimeout(function () { 
+          change("rotate"); 
+      }, 0);
+    }
+
+    // Gets the animation's closest % value based on
+    // the approximated % found below
+    function getClosest(keyframe) {
+      var curr = keyframe[0];
+      var diff = Math.abs (totalCurrentPercent - curr);
+      for (var val = 0, j = keyframe.length; val < j; val++) {
+        var newdiff = Math.abs(totalCurrentPercent - keyframe[val]);
+        if (newdiff < diff) {
+          diff = newdiff;
+          curr = keyframe[val];
+         }
+      }
+      return curr;
+    } 
+  </code></pre>
+  
+  <div class="col-md-12">
+		<div id="circle"></div>
+    <div id='result'></div>	
+	</div>
+
+	 <h3>Sources:</h3>
+        <ul>
+          <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
+          <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
+	  <li><a href="https://javascript.info/json">Javascript.info</a></li>
+	  <li><a href="https://www.javascript.com/resources">javascript.com</a></li>
+	  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage">developer.mozilla.org</a></li>
+	  <li><a href="https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm">kirupa.com</a></li>
+        </ul>
+
+      <footer class="site-footer">
+
+        <h6><span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></h6>
+      </footer>
+
+    </section>
+
+  
+  </body>
+
+
+	
+</html>
