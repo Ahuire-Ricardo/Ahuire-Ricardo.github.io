@@ -60,29 +60,68 @@
 <script>
   	window.addEventListener('load', function(){
 
-		var box2 = document.getElementById('box2'),
-		boxleft, // left position of moving box
-		startx, // starting x coordinate of touch point
-		dist = 0, // distance traveled by touch point
-		touchobj = null // Touch object holder
+	var box2 = document.getElementById('box2'),
+	boxleft, // left position of moving box
+	startx, // starting x coordinate of touch point
+	dist = 0, // distance traveled by touch point
+	touchobj = null // Touch object holder
 
-		box2.addEventListener('touchstart', function(e){
-				touchobj = e.changedTouches[0] // reference first touch point
-				boxleft = parseInt(box2.style.left) // get left position of box
-				startx = parseInt(touchobj.clientX) // get x coord of touch point
-				e.preventDefault() // prevent default click behavior
-		}, false)
+	box2.addEventListener('touchstart', function(e){
+			touchobj = e.changedTouches[0] // reference first touch point
+			boxleft = parseInt(box2.style.left) // get left position of box
+			startx = parseInt(touchobj.clientX) // get x coord of touch point
+			e.preventDefault() // prevent default click behavior
+	}, false)
 
-		box2.addEventListener('touchmove', function(e){
-				touchobj = e.changedTouches[0] // reference first touch point for this event
-				var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
-				// move box according to starting pos plus dist
-				// with lower limit 0 and upper limit 350 so it doesn't move outside box:
-				box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
-				e.preventDefault()
-		}, false)
+	box2.addEventListener('touchmove', function(e){
+			touchobj = e.changedTouches[0] // reference first touch point for this event
+			var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
+			// move box according to starting pos plus dist
+			// with lower limit 0 and upper limit 350 so it doesn't move outside box:
+			box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
+			e.preventDefault()
+	}, false)
 
-		}, false)
+	}, false)
+	
+	function changeBg()
+	{
+	    document.getElementById("body").style.background = "red";
+	    document.getElementById("body").innerHTML = "Let go of me!";
+	}
+	function changeText()
+	{
+	    document.getElementById("body").style.color = "black";
+	}
+	function dblClick()
+	{
+	    document.getElementById("body").style.color = "white";
+	    document.getElementById("body").innerHTML = "Click me!";
+	}
+	function contMenu()
+	{
+	    document.getElementById("body").style.color = "black";
+	    document.getElementById("body").style.background = "white";
+	}
+	function formFoc()
+	{
+	    document.getElementById("text").style.borderColor = "red";
+	}
+	function getInput()
+	{
+	    document.getElementById("text").style.borderColor = "green";
+	}
+
+	function toStart()
+	{
+	    document.getElementById("section").style.background = "olivedrab";
+	}
+
+	function toEnd()
+	{
+	    document.getElementById("section").style.background = "white";
+	}
+
 </script>
 
 </head>
@@ -110,31 +149,31 @@
 	<p>This program change the color in every block when we click on the block.</p>
 			
  <pre><code data-language="javascript">
-  	window.addEventListener('load', function(){
+window.addEventListener('load', function(){
 
-		var box2 = document.getElementById('box2'),
-		boxleft, // left position of moving box
-		startx, // starting x coordinate of touch point
-		dist = 0, // distance traveled by touch point
-		touchobj = null // Touch object holder
+var box2 = document.getElementById('box2'),
+boxleft, // left position of moving box
+startx, // starting x coordinate of touch point
+dist = 0, // distance traveled by touch point
+touchobj = null // Touch object holder
 
-		box2.addEventListener('touchstart', function(e){
-				touchobj = e.changedTouches[0] // reference first touch point
-				boxleft = parseInt(box2.style.left) // get left position of box
-				startx = parseInt(touchobj.clientX) // get x coord of touch point
-				e.preventDefault() // prevent default click behavior
-		}, false)
+box2.addEventListener('touchstart', function(e){
+		touchobj = e.changedTouches[0] // reference first touch point
+		boxleft = parseInt(box2.style.left) // get left position of box
+		startx = parseInt(touchobj.clientX) // get x coord of touch point
+		e.preventDefault() // prevent default click behavior
+}, false)
 
-		box2.addEventListener('touchmove', function(e){
-				touchobj = e.changedTouches[0] // reference first touch point for this event
-				var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
-				// move box according to starting pos plus dist
-				// with lower limit 0 and upper limit 350 so it doesn't move outside box:
-				box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
-				e.preventDefault()
-		}, false)
+box2.addEventListener('touchmove', function(e){
+		touchobj = e.changedTouches[0] // reference first touch point for this event
+		var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
+		// move box according to starting pos plus dist
+		// with lower limit 0 and upper limit 350 so it doesn't move outside box:
+		box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
+		e.preventDefault()
+}, false)
 
-		}, false)
+}, false)
  </code></pre>
  
  <div class="col-md-12">
@@ -149,32 +188,51 @@
 <p>This program change the color in text and background color.</p>
 
 <pre><code data-language="javascript">
- function changeTextColor() {
-		var color = document.getElementById("textcolor").value;
-		var things = document.getElementsByClassName('changeText');
+ function changeBg()
+{
+    document.getElementById("body").style.background = "red";
+    document.getElementById("body").innerHTML = "Let go of me!";
+}
+function changeText()
+{
+    document.getElementById("body").style.color = "black";
+}
+function dblClick()
+{
+    document.getElementById("body").style.color = "white";
+    document.getElementById("body").innerHTML = "Click me!";
+}
+function contMenu()
+{
+    document.getElementById("body").style.color = "black";
+    document.getElementById("body").style.background = "white";
+}
+function formFoc()
+{
+    document.getElementById("text").style.borderColor = "red";
+}
+function getInput()
+{
+    document.getElementById("text").style.borderColor = "green";
+}
 
-		for (var i = 0; i < things.length; i++){
-			things[i].style.color = color;
-		}
+function toStart()
+{
+    document.getElementById("section").style.background = "olivedrab";
+}
 
-	}
-
-	function changeBackgroundColor(){
-		var color = document.getElementById("favcolor").value;
-		var things = document.getElementById('changeBox')
-
-		things.style.backgroundColor = color;
-
-	}
+function toEnd()
+{
+    document.getElementById("section").style.background = "white";
+}
   </code></pre>
 	
   <div class="col-md-12" id=changeBox>
-  <p class="changeText">Enter in What Color you would like for the Text of this DIV box</p>
-			<input type="color" id="textcolor" value="#ff0000">
-			<button type="button" onclick="changeTextColor()">Choose Text Color</button>
-			<p class="changeText">Enter what color text you would like to use for the Background</p>
-			<input type="color" id="favcolor" value="#c0c0c0">
-			<button type="button" onclick="changeBackgroundColor()">Choose Background Color</button>
+  <br>
+        When you mouseover the button, the text color will change to black. <br/>
+        When you click it, the background will change to red and it will tell you to let go.<br/>
+        When you double click it, the text color will change back to white and the text will change back to "Click me". <br/> <br/>
+        <button id="body" style="background:purple; color:white; border:none;" oncontextmenu="contMenu()" ondblclick="dblClick()" onmouseover="changeText()" onclick="changeBg()">Click me</button> <br/><br/>
   </div>
 
 	 <h3>Sources:</h3>
