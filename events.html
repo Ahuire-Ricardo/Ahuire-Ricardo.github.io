@@ -20,7 +20,7 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 <style>
-			#box2 {
+			#boxmove {
 					width: 100px;
 					height: 50px;
 					font-size: 1em;
@@ -38,22 +38,9 @@
 					margin-top: 20px;
 			}
 
-			#box1 {
-					width: 480px;
-					height: 75px;
-					background: darkseagreen;
-					border: 1px solid green;
-					position: absolute;
-					padding-top: 14px;
-					-moz-box-shadow: 0 0 5px gray;
-					box-shadow: 0 0 5px gray;
-					text-align: center;
-					margin-left: 20px;
-					margin-top: 20px;
-			}
-
+			
 			#text {
-					margin-top: 115px;
+					margin-top: 100px;
 					margin-left: 20px;
 			}
 	</style>
@@ -61,25 +48,25 @@
 <script>
   	window.addEventListener('load', function(){
 
-	var box2 = document.getElementById('box2'),
-	boxleft, // left position of moving box
-	startx, // starting x coordinate of touch point
-	dist = 0, // distance traveled by touch point
-	touchobj = null // Touch object holder
+	var boxmove = document.getElementById('boxmove'),
+	boxleft, 
+	startx, 
+	dist = 0, 
+	touchobj = null
 
-	box2.addEventListener('touchstart', function(e){
+	boxmove.addEventListener('touchstart', function(e){
 			touchobj = e.changedTouches[0] // reference first touch point
-			boxleft = parseInt(box2.style.left) // get left position of box
+			boxleft = parseInt(boxmove.style.left) // get left position of box
 			startx = parseInt(touchobj.clientX) // get x coord of touch point
 			e.preventDefault() // prevent default click behavior
 	}, false)
 
-	box2.addEventListener('touchmove', function(e){
+	boxmove.addEventListener('touchmove', function(e){
 			touchobj = e.changedTouches[0] // reference first touch point for this event
 			var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
 			// move box according to starting pos plus dist
 			// with lower limit 0 and upper limit 350 so it doesn't move outside box:
-			box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
+			boxmove.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
 			e.preventDefault()
 	}, false)
 
@@ -150,25 +137,25 @@
  <pre><code data-language="javascript">
 window.addEventListener('load', function(){
 
-var box2 = document.getElementById('box2'),
-boxleft, // left position of moving box
-startx, // starting x coordinate of touch point
-dist = 0, // distance traveled by touch point
-touchobj = null // Touch object holder
+var boxmove = document.getElementById('boxmove'),
+boxleft, 
+startx, 
+dist = 0, 
+touchobj = null
 
-box2.addEventListener('touchstart', function(e){
+boxmove.addEventListener('touchstart', function(e){
 		touchobj = e.changedTouches[0] // reference first touch point
-		boxleft = parseInt(box2.style.left) // get left position of box
+		boxleft = parseInt(boxmove.style.left) // get left position of box
 		startx = parseInt(touchobj.clientX) // get x coord of touch point
 		e.preventDefault() // prevent default click behavior
 }, false)
 
-box2.addEventListener('touchmove', function(e){
+boxmove.addEventListener('touchmove', function(e){
 		touchobj = e.changedTouches[0] // reference first touch point for this event
 		var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
 		// move box according to starting pos plus dist
 		// with lower limit 0 and upper limit 350 so it doesn't move outside box:
-		box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
+		boxmove.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
 		e.preventDefault()
 }, false)
 
@@ -176,9 +163,7 @@ box2.addEventListener('touchmove', function(e){
  </code></pre>
  
  <div class="col-md-12">
-       <div id="box1">
-            <div id="box2" style="left:0; top:0">Drag Me!</div>
-       </div>
+       <div id="box2" style="left:0; top:0">Drag Me!</div>
  </div>
  <br/><br/><br/><br/>
  
