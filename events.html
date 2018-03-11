@@ -139,15 +139,13 @@
     </section>
 
     <section class="main-content">
-      <p>Every HTML element that you access via JavaScript has a style object. This object allows you to specify a CSS property and
-	 set its value.</p>
-      <p>Also, when you set this property on an element, you override and erase any styles that have been set elsewhere for that element's
-	 particular property you are setting. Setting the border property, for example, will override settings made elsewhere for that
-	 element's border property in the head section, or external style sheets. </p>
+      <p>HTML DOM events allow JavaScript to register different event handlers on elements in an HTML document.</p>
+      <p>Events are normally used in combination with functions, and the function will not be executed before the event
+	 occurs (such as when a user clicks a button). </p>
 	    
 
 	<h2>onTouch</h2>	
-	<p>This program change the color in every block when we click on the block.</p>
+	<p>This program change the position by box with touch screen.</p>
 			
  <pre><code data-language="javascript">
 window.addEventListener('load', function(){
@@ -185,8 +183,7 @@ box2.addEventListener('touchmove', function(e){
  <br/><br/><br/><br/>
  
 
-<h2>Example N° 2</h2>
-<p>This program change the color in text and background color.</p>
+<h2>ondblclick, onmouseover, onclick</h2>
 
 <pre><code data-language="javascript">
  function changeBg()
