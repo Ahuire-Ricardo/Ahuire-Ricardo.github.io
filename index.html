@@ -1,260 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Events</title>
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @Ahuire-Ricardo
+ Sign out
+0
+0 1 Ahuire-Ricardo/Ahuire-Ricardo.github.io
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+Ahuire-Ricardo.github.io/index.html
+03e0335  5 hours ago
+@Ahuire-Ricardo Ahuire-Ricardo Update index.html
+      
+48 lines (46 sloc)  3.46 KB
 
-		<meta charset="utf-8" />
-		
-		<meta name="DESCRIPTION" content="Events" />
-		<meta name="KEYWORDS" content="CIT 261, BYU-Idaho" />
-		<meta name="Author" content="Ricardo Ahuire" />
-		<meta name="School" content="BYU-Idaho" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
-	        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
-	        <link href="css/theme.css" rel="stylesheet" type="text/css">
-	        <script src="javascripts/rainbow.js"></script>
-	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
-
-<style>
-			#box2 {
-					width: 100px;
-					height: 50px;
-					font-size: 1em;
-					border: 1px solid orange;
-					-webkit-box-sizing: border-box;
-					-moz-box-sizing: border-box;
-					box-sizing: border-box;
-					background: lightyellow;
-					position: absolute;
-					padding-top: 14px;
-					-moz-box-shadow: 0 0 5px gray;
-					box-shadow: 0 0 5px gray;
-					text-align: center;
-					margin-left: 20px;
-					margin-top: 20px;
-			}
-
-			#box1 {
-					width: 480px;
-					height: 75px;
-					background: darkseagreen;
-					border: 1px solid green;
-					position: absolute;
-					padding-top: 14px;
-					-moz-box-shadow: 0 0 5px gray;
-					box-shadow: 0 0 5px gray;
-					text-align: center;
-					margin-left: 20px;
-					margin-top: 20px;
-			}
-
-			#text {
-					margin-top: 115px;
-					margin-left: 20px;
-			}
-	</style>
-		
-<script>
-  	window.addEventListener('load', function(){
-
-	var box2 = document.getElementById('box2'),
-	boxleft, // left position of moving box
-	startx, // starting x coordinate of touch point
-	dist = 0, // distance traveled by touch point
-	touchobj = null // Touch object holder
-
-	box2.addEventListener('touchstart', function(e){
-			touchobj = e.changedTouches[0] // reference first touch point
-			boxleft = parseInt(box2.style.left) // get left position of box
-			startx = parseInt(touchobj.clientX) // get x coord of touch point
-			e.preventDefault() // prevent default click behavior
-	}, false)
-
-	box2.addEventListener('touchmove', function(e){
-			touchobj = e.changedTouches[0] // reference first touch point for this event
-			var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
-			// move box according to starting pos plus dist
-			// with lower limit 0 and upper limit 350 so it doesn't move outside box:
-			box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
-			e.preventDefault()
-	}, false)
-
-	}, false)
-	
-	function changeBg()
-	{
-	    document.getElementById("body").style.background = "red";
-	    document.getElementById("body").innerHTML = "Let go of me!";
-	}
-	function changeText()
-	{
-	    document.getElementById("body").style.color = "black";
-	}
-	function dblClick()
-	{
-	    document.getElementById("body").style.color = "white";
-	    document.getElementById("body").innerHTML = "Click me!";
-	}
-	function contMenu()
-	{
-	    document.getElementById("body").style.color = "black";
-	    document.getElementById("body").style.background = "white";
-	}
-	function formFoc()
-	{
-	    document.getElementById("text").style.borderColor = "red";
-	}
-	function getInput()
-	{
-	    document.getElementById("text").style.borderColor = "green";
-	}
-
-	function toStart()
-	{
-	    document.getElementById("section").style.background = "olivedrab";
-	}
-
-	function toEnd()
-	{
-	    document.getElementById("section").style.background = "white";
-	}
-
-</script>
-
-</head>
-	
-<body>
-    <section class="page-header">
-      <h1 class="project-name">Ricardo Ahuire</h1>
-      <h2 class="project-tagline">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h2>
-
-     <nav id="primary_nav_wrap">
-          <ul>
-            <li class="current-menu-item"><a href="https://ahuire-ricardo.github.io">Home</a></li>
-           
-    </section>
-
-    <section class="main-content">
-      <p>Every HTML element that you access via JavaScript has a style object. This object allows you to specify a CSS property and
-	 set its value.</p>
-      <p>Also, when you set this property on an element, you override and erase any styles that have been set elsewhere for that element's
-	 particular property you are setting. Setting the border property, for example, will override settings made elsewhere for that
-	 element's border property in the head section, or external style sheets. </p>
-	    
-
-	<h2>onTouch</h2>	
-	<p>This program change the color in every block when we click on the block.</p>
-			
- <pre><code data-language="javascript">
-window.addEventListener('load', function(){
-
-var box2 = document.getElementById('box2'),
-boxleft, // left position of moving box
-startx, // starting x coordinate of touch point
-dist = 0, // distance traveled by touch point
-touchobj = null // Touch object holder
-
-box2.addEventListener('touchstart', function(e){
-		touchobj = e.changedTouches[0] // reference first touch point
-		boxleft = parseInt(box2.style.left) // get left position of box
-		startx = parseInt(touchobj.clientX) // get x coord of touch point
-		e.preventDefault() // prevent default click behavior
-}, false)
-
-box2.addEventListener('touchmove', function(e){
-		touchobj = e.changedTouches[0] // reference first touch point for this event
-		var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
-		// move box according to starting pos plus dist
-		// with lower limit 0 and upper limit 350 so it doesn't move outside box:
-		box2.style.left = ( (boxleft + dist > 350)? 350 : (boxleft + dist < 0)? 0 : boxleft + dist ) + 'px'
-		e.preventDefault()
-}, false)
-
-}, false)
- </code></pre>
- 
- <div class="col-md-12">
-       <div id="box1">
-            <div id="box2" style="left:0; top:0">Drag Me!</div>
-       </div>
- </div>
- <br/><br/><br/><br/>
- 
-
-<h2>Example N° 2</h2>
-<p>This program change the color in text and background color.</p>
-
-<pre><code data-language="javascript">
- function changeBg()
-{
-    document.getElementById("body").style.background = "red";
-    document.getElementById("body").innerHTML = "Let go of me!";
-}
-function changeText()
-{
-    document.getElementById("body").style.color = "black";
-}
-function dblClick()
-{
-    document.getElementById("body").style.color = "white";
-    document.getElementById("body").innerHTML = "Click me!";
-}
-function contMenu()
-{
-    document.getElementById("body").style.color = "black";
-    document.getElementById("body").style.background = "white";
-}
-function formFoc()
-{
-    document.getElementById("text").style.borderColor = "red";
-}
-function getInput()
-{
-    document.getElementById("text").style.borderColor = "green";
-}
-
-function toStart()
-{
-    document.getElementById("section").style.background = "olivedrab";
-}
-
-function toEnd()
-{
-    document.getElementById("section").style.background = "white";
-}
-  </code></pre>
-	
-  <div class="col-md-12" id=changeBox>
-  <br>
-        When you mouseover the button, the text color will change to black. <br/>
-        When you click it, the background will change to red and it will tell you to let go.<br/>
-        When you double click it, the text color will change back to white and the text will change back to "Click me". <br/> <br/>
-        <button id="body" style="background:purple; color:white; border:none;" oncontextmenu="contMenu()" ondblclick="dblClick()" onmouseover="changeText()" onclick="changeBg()">Click me</button> <br/><br/>
-  </div>
-
-	 <h3>Sources:</h3>
-        <ul>
-          <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
-          <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
-	  <li><a href="https://javascript.info/json">Javascript.info</a></li>
-	  <li><a href="https://www.javascript.com/resources">javascript.com</a></li>
-	  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage">developer.mozilla.org</a></li>
-	  <li><a href="https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm">kirupa.com</a></li>
-        </ul>
-
-      <footer class="site-footer">
-
-        <h6><span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></h6>
-      </footer>
-
-    </section>
-
-  
-  </body>
-
-
-	
-</html>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> CIT 261 Assignment Portal | Ricardo Ahuire | BYU-Idaho</title>
+        <meta name="description" content=" Assignemnt portal page for Ricardo Ahuire in CIT 261 JavaScript Mobile Development at Brigham Young University-Idaho.">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+        <link href="css/theme.css" rel="stylesheet" type="text/css">
+        <script src="javascripts/rainbow.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+              </head>
+        <body>
+            <section class="page-header">
+                <h1 class="project-name"> Ricardo Ahuire</h1>
+                <h2 class="project-tagline">CIT 261 - Assignment Portal</h2>
+            </section>
+            <nav> <!-- Future navigational menu-->
+            </nav>
+            <main>
+                <h2 class="project-tagline" >Topics:</h2>
+                <ul>
+                    <li> Lesson 01: <a href="loops.html"> Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</a></li>
+                    <li> Lesson 02: <a href="Functions.html"> Object Creation Functions, Inheritance, Properties, Methods, Instantiation</a></li>
+                    <li> Lesson 03: <a href="Json.html"> JSON Parse, Stringify</a></li>
+                    <li> Lesson 04: <a href="consume.html"> Using XMLHTTPRequest to Consume a JSON Web Service</a></li>
+                    <li> Lesson 05: <a href="api.html"> Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</a></li>
+                    <li> Lesson 06: <a href="dom.html"> DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</a></li>
+                    <li> Lesson 07: <a href="css.html"> Manipulating CSS Class Properties Using JavaScript </a></li>
+                    <li> Lesson 08: <a href="transition.html"> Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</a></li>
+                    <li> Lesson 09: <a href="events.html"> Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</a></li>
+                    <li> Lesson 10: <a href="#"> HTML5 Tags - Video, Audio, and Canvas</a></li>
+                    <li> Lesson 11: <a href="#"> Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</a></li>
+                    <li> Lesson 12: <a href="#"> Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library)</a></li>
+                    <li> Lesson 13: <a href="#"> Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library)</a></li>
+                    <li> Final Project <a href="#"> Team Mobile App </a></li>
+                    <li> Course Reflection <a href="#"> Journal </a></li>
+                </ul>
+            </main>
+            <footer class="site-footer">
+                <p>&copy Ricardo Ahuire <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </body>
+        </html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
