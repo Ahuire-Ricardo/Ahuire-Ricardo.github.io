@@ -77,10 +77,7 @@
 	    document.getElementById("body").style.background = "red";
 	    document.getElementById("body").innerHTML = "Let go of me!";
 	}
-	function changeText()
-	{
-	    document.getElementById("body").style.color = "black";
-	}
+	
 	function dblClick()
 	{
 	    document.getElementById("body").style.color = "white";
@@ -91,25 +88,7 @@
 	    document.getElementById("body").style.color = "black";
 	    document.getElementById("body").style.background = "white";
 	}
-	function formFoc()
-	{
-	    document.getElementById("text").style.borderColor = "red";
-	}
-	function getInput()
-	{
-	    document.getElementById("text").style.borderColor = "green";
-	}
-
-	function toStart()
-	{
-	    document.getElementById("section").style.background = "olivedrab";
-	}
-
-	function toEnd()
-	{
-	    document.getElementById("section").style.background = "white";
-	}
-
+	
 </script>
 
 </head>
@@ -176,10 +155,7 @@ boxmove.addEventListener('touchmove', function(e){
     document.getElementById("body").style.background = "red";
     document.getElementById("body").innerHTML = "Let go of me!";
 }
-function changeText()
-{
-    document.getElementById("body").style.color = "black";
-}
+
 function dblClick()
 {
     document.getElementById("body").style.color = "white";
@@ -190,32 +166,13 @@ function contMenu()
     document.getElementById("body").style.color = "black";
     document.getElementById("body").style.background = "white";
 }
-function formFoc()
-{
-    document.getElementById("text").style.borderColor = "red";
-}
-function getInput()
-{
-    document.getElementById("text").style.borderColor = "green";
-}
-
-function toStart()
-{
-    document.getElementById("section").style.background = "olivedrab";
-}
-
-function toEnd()
-{
-    document.getElementById("section").style.background = "white";
-}
   </code></pre>
 	
   <div class="col-md-12" id=changeBox>
   <br>
-        When you mouseover the button, the text color will change to black. <br/>
-        When you click it, the background will change to red and it will tell you to let go.<br/>
-        When you double click it, the text color will change back to white and the text will change back to "Click me". <br/> <br/>
-        <button id="body" style="background:purple; color:white; border:none;" oncontextmenu="contMenu()" ondblclick="dblClick()" onmouseover="changeText()" onclick="changeBg()">Click me</button> <br/><br/>
+        When you click, the background will change to red and it will tell you to let go.<br/>
+        When you double click, the text color will change back to white and the text will change back to "Click". <br/> <br/>
+        <button id="body" style="background:purple; color:white; border:none;" oncontextmenu="contMenu()" ondblclick="dblClick()" onclick="changeBg()">Click</button> <br/><br/>
   </div>
 
 	 <h3>Sources:</h3>
