@@ -1,1 +1,108 @@
 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CSS</title>
+
+		<meta charset="utf-8" />
+		
+		<meta name="DESCRIPTION" content="HTML5" />
+		<meta name="KEYWORDS" content="CIT 261, BYU-Idaho" />
+		<meta name="Author" content="Ricardo Ahuire" />
+		<meta name="School" content="BYU-Idaho" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+	        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+	        <link href="css/theme.css" rel="stylesheet" type="text/css">
+	        <script src="javascripts/rainbow.js"></script>
+	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+
+</head>
+	
+<body>
+    <section class="page-header">
+      <h1 class="project-name">Ricardo Ahuire</h1>
+      <h2 class="project-tagline">HTML5 Tags - Video, Audio, and Canvas</h2>
+
+     <nav id="primary_nav_wrap">
+          <ul>
+            <li class="current-menu-item"><a href="https://ahuire-ricardo.github.io">Home</a></li>
+           
+    </section>
+
+    <section class="main-content">
+      <p>Every HTML element that you access via JavaScript has a style object. This object allows you to specify a CSS property and
+	 set its value.</p>
+      <p>Also, when you set this property on an element, you override and erase any styles that have been set elsewhere for that element's
+	 particular property you are setting. Setting the border property, for example, will override settings made elsewhere for that
+	 element's border property in the head section, or external style sheets. </p>
+	    
+
+	<h2>HTML5 Tags</h2>	
+	<p>This program change the color in every block when we click on the block.</p>
+			
+  <div class="col-md-12">
+    <br>HTML5 Video Demo
+				<br><br>
+				<video id="video1" width="640" height="480" poster="face.png" controls src="Home_work.mp4" type="video/mp4"></video>
+				</div>
+				<br><br>
+ </div></br></br></br></br></br></br>
+
+<h2>Example N° 2</h2>
+<p>This program change the color in text and background color.</p>
+
+<pre><code data-language="javascript">
+ function changeTextColor() {
+		var color = document.getElementById("textcolor").value;
+		var things = document.getElementsByClassName('changeText');
+
+		for (var i = 0; i < things.length; i++){
+			things[i].style.color = color;
+		}
+
+	}
+
+	function changeBackgroundColor(){
+		var color = document.getElementById("favcolor").value;
+		var things = document.getElementById('changeBox')
+
+		things.style.backgroundColor = color;
+
+	}
+  </code></pre>
+	
+  <div class="col-md-12" id=changeBox>
+  <p class="changeText">Enter in What Color you would like for the Text of this DIV box</p>
+			<input type="color" id="textcolor" value="#ff0000">
+			<button type="button" onclick="changeTextColor()">Choose Text Color</button>
+			<p class="changeText">Enter what color text you would like to use for the Background</p>
+			<input type="color" id="favcolor" value="#c0c0c0">
+			<button type="button" onclick="changeBackgroundColor()">Choose Background Color</button>
+  </div>
+
+	 <h3>Sources:</h3>
+        <ul>
+          <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
+          <li><a href="http://www.saintsatplay.com/blog/2015/10/storing-and-retrieving-objects-with-localstorage#.Wnu75OjwbIU">saintsatplay.com</a></li>
+	  <li><a href="https://javascript.info/json">Javascript.info</a></li>
+	  <li><a href="https://www.javascript.com/resources">javascript.com</a></li>
+	  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage">developer.mozilla.org</a></li>
+	  <li><a href="https://www.kirupa.com/html5/storing_and_retrieving_an_array_from_local_storage.htm">kirupa.com</a></li>
+        </ul>
+
+      <footer class="site-footer">
+
+        <h6><span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span></h6>
+      </footer>
+
+    </section>
+
+  
+  </body>
+
+
+	
+</html>
