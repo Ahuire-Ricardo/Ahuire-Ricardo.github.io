@@ -49,40 +49,17 @@
 	<video id="video1" width="640" height="480" poster="Face.png" controls src="Home_work.mp4" type="video/mp4"></video>
 	</div>
 	<br><br>
- </div></br>
+ </div>
 
-<h2>Example N° 2</h2>
-<p>This program change the color in text and background color.</p>
-
-<pre><code data-language="javascript">
- function changeTextColor() {
-		var color = document.getElementById("textcolor").value;
-		var things = document.getElementsByClassName('changeText');
-
-		for (var i = 0; i < things.length; i++){
-			things[i].style.color = color;
-		}
-
-	}
-
-	function changeBackgroundColor(){
-		var color = document.getElementById("favcolor").value;
-		var things = document.getElementById('changeBox')
-
-		things.style.backgroundColor = color;
-
-	}
-  </code></pre>
-	
-  <div class="col-md-12" id=changeBox>
-  <p class="changeText">Enter in What Color you would like for the Text of this DIV box</p>
-			<input type="color" id="textcolor" value="#ff0000">
-			<button type="button" onclick="changeTextColor()">Choose Text Color</button>
-			<p class="changeText">Enter what color text you would like to use for the Background</p>
-			<input type="color" id="favcolor" value="#c0c0c0">
-			<button type="button" onclick="changeBackgroundColor()">Choose Background Color</button>
-  </div>
-
+<h2>Audio</h2>
+<div class="col-md-12">
+    <br>HTML5 Audio Demo
+	<br><br>
+	<audio id="audio1" controls src="2017-09-3030-richard-j-maynes-64k-eng.mp3" type="audio/mpeg"></audio>
+	</div>
+	<br><br>
+ </div>	
+  
 	 <h3>Sources:</h3>
         <ul>
           <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools</a></li>
