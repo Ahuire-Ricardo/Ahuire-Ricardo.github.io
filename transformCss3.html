@@ -56,6 +56,28 @@
 			-ms-transform:translate(10px, 20px);
 			transform:translate(10px, 20px);
 		}
+	  
+	  	#divtest2 div {
+			height:100px;
+			width:100px;
+			border:1px solid #f00;
+			margin:10px auto;
+			background: #ccc;
+			text-align:center;
+			-webkit-transition: all 2s ease-in-out;
+			-moz-transition: all 2s ease-in-out;
+			-o-transition: all 2s ease-in-out;
+			-ms-transition: all 2s ease-in-out; 
+			transition: all 2s ease-in-out; 
+	       }
+	  
+	       #divtest2 div:hover, #divtest2 div.hover_effect {
+			-webkit-transform:rotate(720deg) scale(2,2);
+			-moz-transform:rotate(720deg) scale(2,2);
+			-o-transform:rotate(720deg) scale(2,2);
+			-ms-transform:rotate(720deg) scale(2,2);
+			transform:rotate(720deg) scale(2,2); 
+	       }
 	</style>
   
 </head>
@@ -77,7 +99,7 @@
       <p The transformation itself is not an animation, but the changed element is simply shown, however the transformations can be
          used in animations and transitions, so we see how the element changes shape, size or position.</p>
       
-	<h2>Example</h2>
+	<h2>Example #1</h2>
 	    <p>There are 4 types of values to transform HTML elements using CSS3:</p>
 				
     <div id="skew">
@@ -94,6 +116,12 @@
     </div>
  
 	<br><br>
+	    
+    <h2>Example #2</h2>
+	     
+    <div id="divtest2">
+	<div class="hover">Mouse over please.</div>
+    </div>
  
 
 	 <h3>Sources:</h3>
