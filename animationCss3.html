@@ -71,6 +71,38 @@
 			50%{left:90%;-moz-transform:rotate(540deg)}
 		}
 		
+	        .div03 {
+		  width: 100px;
+		  height: 100px;
+		  background-color: blue;
+		  position: relative;
+		  -webkit-animation-name: cuadrado; /* Chrome, Safari, Opera */
+		  -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+		  -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+		  -webkit-animation-direction: reverse; /* Chrome, Safari, Opera */
+		  animation-name: cuadrado;
+		  animation-duration: 4s;
+		  animation-iteration-count: 3;
+		  animation-direction: reverse;
+		}
+
+		/* Chrome, Safari, Opera */
+		@-webkit-keyframes cuadrado {
+		  0%   {background-color:blue; left:0px; top:0px;}
+		  25%  {background-color:yellow; left:90%; top:0px;}
+		  50%  {background-color:blue; left:90%; top:80px;}
+		  25%  {background-color:green; left:0px; top:80px;}
+		  0% {background-color:red; left:0px; top:0px;}
+		}
+
+		/* Standard syntax */
+		@keyframes cuadrado {
+		  0%   {background-color:blue; left:0px; top:0px;}
+		  25%  {background-color:yellow; left:90%; top:0px;}
+		  50%  {background-color:blue; left:90%; top:80px;}
+		  25%  {background-color:green; left:0px; top:80px;}
+		  0% {background-color:red; left:0px; top:0px;}
+		}
 	</style>
   
 </head>
@@ -91,10 +123,16 @@
 	 
       <p>An animation is an element subject to a transformation, during a specified time.</p>
 	    
-      <h2>Example:</h2>
+      <h2>Example #1:</h2>
       
     <div class="div01">
        <div class="div02"></div>
+    </div>
+	  
+       <h2>Example #2:</h2>
+      
+    <div class="div01">
+       <div class="div03"></div>
     </div>
   
 	<br><br>
