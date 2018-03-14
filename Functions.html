@@ -19,39 +19,38 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 		<script>
-			// Instantiation of empObj with predefined data
+			//Initialize Object and state properties:
 			var empObj = {
-						 "employees":
-							[
-								{"firstName":"Ricardo", "lastName":"Ahuire"},
-								{"firstName":"Jayton", "lastName":"Birch"}, 
-								{"firstName":"Ali", "lastName":"Cope"},
-								{"firstName":"Skyler", "lastName":"Hildreth"}
-							]
-						};
-			function getEmployee() {
-				var resultsValue = "";
+				      firstName:"Ricardo",
+				      lastName:"Ahuire",
+				      teacher:"Brother Baer",
+				      course: "CIT 261"
+				};
 			
-				// Setting a Variable
-				var stringCheck = document.getElementById('NumberA').value;
-				console.log(stringCheck);
-				// Checking to see if the variable is a number or not
-				if(!isNaN(stringCheck) ) {
-					if( (stringCheck - 1) < empObj.employees.length && (stringCheck - 1) >= 0) {
-						// Accessing the firstname property member in the employees array in the empObj
-						resultsValue = empObj.employees[stringCheck - 1].firstName + " " + empObj.employees[stringCheck - 1].lastName;
-						//empObj.employees[stringCheck - 1].firstName = "Bob"
-					}
-					else {
-						resultsValue = "Number out of array bounds. You Entered |" + stringCheck + "|";
-					}
-				}
-				else {
-					resultsValue = "You did not Enter a pure Integer. You Entered |" + stringCheck + "|";
-				}
+			// Using the object.create method that inherits inher:
+			var inher = Object.create(empObj);
+				inher.firstName = "Jayton";
+				inher.lastName = "Birch";
+				inher.teacher = "Brother Baer";
+			        inher.course = "CIT 261";
+			
+			// Using Constructor Function:
+			function empobj(firstName,lastName,teacher,course) {
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.teacher = teacher;
+				this.course = course;
+			}
+			
+			// Creating objects of car3 type and sending its peoperties as parameters:
+			var emp3 = new empobj("Ali","Cope","Brother Baer","CIT 261");
+			
+			function getEmployee() {
+				resultsValue = empObj + ' , ' + inher + ' , ' + emp3
 				console.log(resultsValue);
 				document.getElementById("results").innerHTML = resultsValue;
-			}
+			}				
+			
 		</script>
 
 	</head>
