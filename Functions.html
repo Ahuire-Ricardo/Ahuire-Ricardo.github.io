@@ -46,7 +46,7 @@
 			var emp3 = new empobj("Ali","Cope","Brother Baer","CIT 261");
 			
 			function getEmployee() {
-				resultsValue = empObj.firstName
+				resultsValue = empObj.firstName + ' , ' + inher.firstName + ' , ' + emp3.firstName
 				console.log(resultsValue);
 				document.getElementById("results").innerHTML = resultsValue;
 			}				
@@ -117,46 +117,43 @@
         </blockquote>
           
         <pre><code data-language="javascript">
-// Instantiation of empObj with predefined data
+//Initialize Object and state properties:
 var empObj = {
-			 "employees":
-				[
-					{"firstName":"Ricardo", "lastName":"Ahuire"},
-					{"firstName":"Jayton", "lastName":"Birch"}, 
-					{"firstName":"Ali", "lastName":"Cope"},
-					{"firstName":"Skyler", "lastName":"Hildreth"}
-				]
-			};
-function getEmployee() {
-	var resultsValue = "";
+	      firstName:"Ricardo",
+	      lastName:"Ahuire",
+	      teacher:"Brother Baer",
+	      course: "CIT 261"
+	};
 
-	// Setting a Variable
-	var stringCheck = document.getElementById('NumberA').value;
-	console.log(stringCheck);
-	// Checking to see if the variable is a number or not
-	if(!isNaN(stringCheck) ) {
-		if( (stringCheck - 1) < empObj.employees.length && (stringCheck - 1) >= 0) {
-			// Accessing the firstname property member in the employees array in the empObj
-			resultsValue = empObj.employees[stringCheck - 1].firstName + " " + empObj.employees[stringCheck - 1].lastName;
-			//empObj.employees[stringCheck - 1].firstName = "Bob"
-		}
-		else {
-			resultsValue = "Number out of array bounds. You Entered |" + stringCheck + "|";
-		}
-	}
-	else {
-		resultsValue = "You did not Enter a pure Integer. You Entered |" + stringCheck + "|";
-	}
+// Using the object.create method that inherits inher:
+var inher = Object.create(empObj);
+	inher.firstName = "Jayton";
+	inher.lastName = "Birch";
+	inher.teacher = "Brother Baer";
+	inher.course = "CIT 261";
+
+// Using Constructor Function:
+function empobj(firstName,lastName,teacher,course) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.teacher = teacher;
+	this.course = course;
+}
+
+// Creating objects of car3 type and sending its peoperties as parameters:
+var emp3 = new empobj("Ali","Cope","Brother Baer","CIT 261");
+
+function getEmployee() {
+	resultsValue = empObj.firstName + ' , ' + inher.firstName + ' , ' + emp3.firstName
 	console.log(resultsValue);
 	document.getElementById("results").innerHTML = resultsValue;
-}
+}			
 		
 	 </code></pre>
 	 
         <h3>Output:</h3>
 	
 	 <div class="col-md-12">
-		<label>Enter a Number: </lable> <input id="NumberA" type="text" value=""></input><br />
 		<button onclick="getEmployee()">Get Employee</button><br /><br />
 	</div>
 	<div class="col-md-12">
@@ -164,26 +161,7 @@ function getEmployee() {
 		<p id="results"></p>
 	</div>
 	
-        <script>
-            function Car(make, model, year, color) {
-                this.make = make;
-                this.model = model;
-                this.year = year;
-                this.color = color;
-            }
-
-            var myCar = new Car("Honda", "Civic", "2004", "black");
-            var myWifesCar = new Car("Chevrolet", "Avalanche", "2005", "blue");
-
-            function printCar() {
-            document.getElementById("demo").innerHTML = "I own a " + myCar.color + " " + myCar.make + " " + myCar.model + "."
-                + " He's a little bit older, he was made in " + myCar.year + "."
-                + " My wife's car is a " + myWifesCar.color + " " + myWifesCar.make + " " + myWifesCar.model + "."
-                + " She's got one year on my " +  myCar.model + "! Her's was made in " + myWifesCar.year + ".";
-              }
-        </script>
-
-       
+              
       <h3>Sources:</h3>
         <ul>
           <li><a href="http://www.w3schools.com/js/js_objects.asp">W3 Schools</a></li>
@@ -199,125 +177,5 @@ function getEmployee() {
 
   
   </body>
-<!--	<body class="funtions">
-		<div class="container body-content">
-			<div class="row">
-                <div class="col-md-12">
-                    <h1>Ricardo Ahuire</h1>
-                    <h2>CIT 261 - Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
-                    <a href="index.html">Home</a><br/><br/>
-                </div>
-				<div class="row">
-					<div class="col-md-12"><hr /></div>
-				</div>
-               <div class="col-md-12">
-					<h3>Rectangle and Shape Inheritance objects and functions</h3>
-					<p id="results1"></p>
-					<p id="results2"></p>
-					<p id="results3"></p>
-                </div> 
-	        
-	        <pre><code data-language="javascript">
-		
-			
-			// Instantiation of empObj with predefined data
-			var empObj = {
-						 "employees":
-							[
-								{"firstName":"Ricardo", "lastName":"Ahuire"},
-								{"firstName":"Jayton", "lastName":"Birch"}, 
-								{"firstName":"Ali", "lastName":"Cope"},
-								{"firstName":"Skyler", "lastName":"Hildreth"}
-							]
-						};
-			function getEmployee() {
-				var resultsValue = "";
-			
-				// Setting a Variable
-				var stringCheck = document.getElementById('NumberA').value;
-				console.log(stringCheck);
-				// Checking to see if the variable is a number or not
-				if(!isNaN(stringCheck) ) {
-					if( (stringCheck - 1) < empObj.employees.length && (stringCheck - 1) >= 0) {
-						// Accessing the firstname property member in the employees array in the empObj
-						resultsValue = empObj.employees[stringCheck - 1].firstName + " " + empObj.employees[stringCheck - 1].lastName;
-						//empObj.employees[stringCheck - 1].firstName = "Bob"
-					}
-					else {
-						resultsValue = "Number out of array bounds. You Entered |" + stringCheck + "|";
-					}
-				}
-				else {
-					resultsValue = "You did not Enter a pure Integer. You Entered |" + stringCheck + "|";
-				}
-				console.log(resultsValue);
-				document.getElementById("results4").innerHTML = resultsValue;
-			}
-		
-	 </code></pre>
-				
-		
-                <div class="col-md-12">
-					<label>Enter a Number: </lable> <input id="NumberA" type="text" value=""></input><br />
-					<button onclick="getEmployee()">Get Employee</button><br /><br />
-                </div>
-                <div class="col-md-12">
-					<h3>Properties</h3>
-					<p id="results4"></p>
-		</div>
-            </div>
-        </div>
-	
-	
-		
-	</body>-->
 
-	<script>
-		/* Inheritance and Object Create with Methods and Instantiation */
-		/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create */
-		// Shape - superclass
-		function Shape() {
-			this.x = 0;
-			this.y = 0;
-		}
-		// superclass method
-		Shape.prototype.move = function(x, y) {
-			this.x += x;
-			this.y += y;
-			console.info('Shape moved.');
-		};
-		// Rectangle - subclass
-		function Rectangle() {
-			Shape.call(this); // call super constructor.
-		}
-		// subclass extends superclass
-		Rectangle.prototype = Object.create(Shape.prototype);
-		Rectangle.prototype.constructor = Rectangle;
-		var rect = new Rectangle();
-		console.log('Is rect an instance of Rectangle?', rect instanceof Rectangle); // true
-		console.log('Is rect an instance of Shape?', rect instanceof Shape); // true
-		rect.move(1, 1); // Outputs, 'Shape moved.'
-		
-		/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create */
-		document.getElementById("results1").innerHTML = "Is rect an instance of Rectangle? " + (rect instanceof Rectangle);
-		document.getElementById("results2").innerHTML = "Is rect an instance of Shape? " + (rect instanceof Shape);
-		var address = {
-			street: "",
-			city: "",
-			state: "",
-			postalCode: "",
-			get getAddress() {
-				return street + "" + city + "" + state + "" + postalCode;
-			},
-			set setAddress(parseAddress) {
-				var parts = parseAddress.split(", ");
-				this.street = parts[0] || "";
-				this.city = parts[1] || "";
-				this.state = parts[2] || "";
-				this.postalCode = parts[3] || "";
-			}
-		}
-		address.setAddress = "";
-		document.write(address.getAddress);
-	</script>
 </html>
