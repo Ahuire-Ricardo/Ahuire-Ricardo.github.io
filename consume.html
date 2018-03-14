@@ -22,8 +22,7 @@
 	function showGroupList(position) {
 	
     var xmlhttp = new XMLHttpRequest();
-    var url = "groupJson.txt";
-
+    
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
@@ -31,7 +30,7 @@
       }
     };
     
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET",position + ".txt", true);
     xmlhttp.send();
 
     function myFunction(arr) {
@@ -73,11 +72,10 @@
 	    
 	     
  <pre><code data-language="javascript">
-  function showGroupList(position) {
+ function showGroupList(position) {
 	
     var xmlhttp = new XMLHttpRequest();
-    var url = "groupJson.txt";
-
+    
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
@@ -85,7 +83,7 @@
       }
     };
     
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET",position + ".txt", true);
     xmlhttp.send();
 
     function myFunction(arr) {
@@ -108,7 +106,7 @@
     <ol id="groupList">
 		</ol>
 			
-		<button type="button" onclick="showGroupList()">Display Group List</button>
+		<button type="button" onclick="showGroupList(groupJson)">Display Group List</button>
 		
 		
 	</div>
