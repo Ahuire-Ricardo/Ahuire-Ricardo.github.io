@@ -27,7 +27,7 @@
       if (this.readyState == 4 && this.status == 200) {
          document.getElementById("groupList").innerHTML = this.responseText;
       }
-    };
+    }
     
     xmlhttp.open("GET",position + ".json", true);
     xmlhttp.send();
@@ -78,7 +78,7 @@
 	 
   <div class="col-md-12">
     		
-		<button type="button" onclick="showGroupList("groupJson")">Display Group List</button>
+		<button id="groupJson" onclick="showGroupList(this.id)">Display Group List</button>
 	  
 	  <div id="groupList"></div>
 		
