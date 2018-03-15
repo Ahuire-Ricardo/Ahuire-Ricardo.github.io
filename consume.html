@@ -65,26 +65,14 @@
     
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("groupList").innerHTML = this.responseText;
+         document.getElementById("groupList").innerHTML = this.responseText;
       }
     };
     
     xmlhttp.open("GET",position + ".json", true);
     xmlhttp.send();
 
-    function myFunction(arr) {
-      var list = document.getElementById("groupList");
-      var i;
-     
-      arr.forEach(function(arr) {
-        var entry = document.createElement("li");
-        entry.appendChild(document.createTextNode('student: ' + arr.name + ' ' + arr.lastName + ',  Email: ' + arr.email));
-        list.appendChild(entry);
-
-      })
-      
-    }
-	
+    
 }
  </code></pre>
 	 
