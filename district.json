@@ -1,0 +1,173 @@
+[{
+		"id": "01",
+		"name": "Lima"
+	},
+	{
+		"id": "02",
+		"name": "Ancón"
+	},
+	{
+		"id": "03",
+		"name": "Ate"
+	},
+	{
+		"id": "04",
+		"name": "Barranco"
+	},
+	{
+		"id": "05",
+		"name": "Breña"
+	},
+	{
+		"id": "06",
+		"name": "Carabayllo"
+	},
+	{
+		"id": "07",
+		"name": "Chaclacayo"
+	},
+	{
+		"id": "08",
+		"name": "Chorrillos"
+	},
+	{
+		"id": "09",
+		"name": "Cieneguilla"
+	},
+	{
+		"id": "10",
+		"name": "Comas"
+	},
+	{
+		"id": "11",
+		"name": "El Agustino"
+	},
+	{
+		"id": "12",
+		"name": "Independencia"
+	},
+	{
+		"id": "13",
+		"name": "Jesús María"
+	},
+	{
+		"id": "14",
+		"name": "La Molina"
+	},
+	{
+		"id": "15",
+		"name": "La Victoria"
+	},
+	{
+		"id": "16",
+		"name": "Lince"
+	},
+	{
+		"id": "17",
+		"name": "Los Olivos"
+	},
+	{
+		"id": "18",
+		"name": "Lurigancho"
+	},
+	{
+		"id": "19",
+		"name": "Lurin"
+	},
+	{
+		"id": "20",
+		"name": "Magdalena del Mar"
+	},
+	{
+		"id": "21",
+		"name": "Pueblo Libre"
+	},
+	{
+		"id": "22",
+		"name": "Miraflores"
+	},
+	{
+		"id": "23",
+		"name": "Pachacamac"
+	},
+	{
+		"id": "24",
+		"name": "Pucusana"
+	},
+	{
+		"id": "25",
+		"name": "Puente Piedra"
+	},
+	{
+		"id": "26",
+		"name": "Punta Hermosa"
+	},
+	{
+		"id": "27",
+		"name": "Punta Negra"
+	},
+	{
+		"id": "28",
+		"name": "Rímac"
+	},
+	{
+		"id": "29",
+		"name": "San Bartolo"
+	},
+	{
+		"id": "30",
+		"name": "San Borja"
+	},
+	{
+		"id": "31",
+		"name": "San Isidro"
+	},
+	{
+		"id": "32",
+		"name": "San Juan de Lurigancho"
+	},
+	{
+		"id": "33",
+		"name": "San Juan de Miraflores"
+	},
+	{
+		"id": "34",
+		"name": "San Luis"
+	},
+	{
+		"id": "35",
+		"name": "San Martín de Porres"
+	},
+	{
+		"id": "36",
+		"name": "San Miguel"
+	},
+	{
+		"id": "37",
+		"name": "Santa Anita"
+	},
+	{
+		"id": "38",
+		"name": "Santa María del Mar"
+	},
+	{
+		"id": "39",
+		"name": "Santa Rosa"
+	},
+	{
+		"id": "40",
+		"name": "Santiago de Surco"
+	},
+	{
+		"id": "41",
+		"name": "Surquillo"
+	},
+	{
+		"id": "42",
+		"name": "Villa El Salvador"
+	},
+	{
+		"id": "43",
+		"name": "Villa María del Triunfo"
+	}
+]
