@@ -1,0 +1,181 @@
+<!doctype html>
+
+<title>
+        Best Food Delivery | Munchery | Munchery
+</title>
+
+<link rel='shortcut icon' href="images/favicon.ico" />
+
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ricardo Ahuire">
+  <meta name="description" content="web about time pronostic">
+  <!-- external style references in the proper cascading order -->    
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">  <!-- Google API font reference -->
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+  <link href="styles/normalize.css" rel="stylesheet"> <!-- normalize useragent/browser defaults -->
+  <link href="styles/main.css" rel="stylesheet">    <!-- default styles - small/phone views -->
+  <link href="styles/medium.css" rel="stylesheet"><!-- medium/tablet views -->
+  <link href="styles/large.css" rel="stylesheet">   <!-- large/wide/desktop views --> 
+
+   <script type="text/javascript">
+    //window.onload = showGroupList();
+
+    function showGroupList() {
+        
+       /* var xmlhttp = new XMLHttpRequest();
+        
+        xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+             var myObj = JSON.parse(xmlhttp.responseText);
+             var ele = document.getElementById("dinnerList");
+            for (var i = 0; i < myObj.length; i++) {
+                // BIND DATA TO <select> ELEMENT.
+                ele.innerHTML = ele.innerHTML +
+                    '<option value="' + myObj[i].name + '">' + myObj[i].Price + '</option>';
+            }
+            
+          }
+        }
+        
+        xmlhttp.open("GET","food.json", true);
+        xmlhttp.send();*/
+
+       /* var url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
+
+        var xmlhttp = new XMLHttpRequest();
+    
+        xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+         var jsonObj = JSON.parse(xmlhttp.responseText);
+         var ele = document.getElementById("groupList");
+         
+         //for (var i = 0; i < jsonObj.length; i++) {
+                // BIND DATA TO <select> ELEMENT.
+                ele.innerHTML = jsonObj[2].strMeal;
+                //document.getElementById("groupList").innerHTML = this.responseText;
+         //   }
+      }
+    }
+    
+    //Add request type and URL
+  xmlhttp.open("GET", url, true)
+
+  //Send request
+  xmlhttp.send();*/
+
+    var request = new XMLHttpRequest();
+    var requestURL = 'https://github.com/Ahuire-Ricardo/Ahuire-Ricardo.github.io/blob/master/food.json';
+
+    var areaCodes;
+
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          //var jsonObj = JSON.parse(request.responseText);
+          //console.log(jsonObj);
+            var text = this.responseText;
+           // areaCodes = JSON.parse(text);
+            document.getElementById("groupList").innerHTML = text;
+          //  document.getElementById("groupList").innerHTML = jsonObj[0].name;
+        }
+    };
+
+    request.open('GET', requestURL, true);
+    request.send();
+
+
+}
+
+      
+
+  
+       
+</script>
+  
+</head>
+<body>
+
+ 
+
+  <header class="logoheader">
+    <img src="images/LogoCook.png" alt="Your franklinweather.com">
+    <h1>Patty's Peruvian Food</h1>
+    <h4 class="slogan">Remembering mom's food!</h4>
+</header>
+  
+  <!-- site navigation use placeholder references -->
+  <nav class="navigation">
+    <!--<button class="hamburger" onclick="toggleNavMenu()">&#9776;</button>-->
+    
+    <button onclick="toggleNavMenu()">&#9776;</button>  
+    <!--<ul id="primaryNavigation" class="hide">
+      <li><a href="index.php">Home</a></li>
+      <li class="active"><a href="franklin.php">Franklin</a></li>
+      <li><a href="springfield.php">Springfield</a></li>
+        <li><a href="greenville.php">Greenville</a></li>
+      <li><a href="stormcenter.php">Storm Center</a></li>
+      <li><a href="gallery.php">Gallery</a></li>
+    </ul>  --> 
+  </nav>
+    
+  <main>
+    <div class="photoFullWidth"><!--<h2 class="homepagestory">Weather Story</h2>-->
+      <img src="images/principal-small.jpg" alt="ligtning strike to the ground" sizes="100vw"
+      srcset="images/principal-small.jpg 400w, images/principal-medium.jpg 800w, images/principal-large.jpg 1200w">
+      
+      <h2> Step 1: Choose your food</h2>
+
+      <form name="addItem" id='add'>
+            <select id="dinnerList">
+              <option value="">-- Select --</option>
+            </select>
+
+            
+      </form>
+
+      <button id="food" onclick="showGroupList()">Display Group List</button>
+
+      <div id="groupList"></div>
+    
+    
+      </div>
+
+      
+    </div>
+    <div class="citygrid">
+        <div><h2>Franklin Tennessee</h2>
+        <h5 class="population1">Population 62,487</h5>
+        <h5 class="population">Founded 1799</h5>
+            <a href="franklin.php"><img src="images/franklinIndex.jpg" alt="franklin landscape">
+            </a></div>
+        <div><h2>Springfield Missouri</h2>
+        <h5 class="population1">Population 159,498</h5>
+        <h5 class="population">Founded 1830</h5>
+        <a href="springfield.php"><img src="images/koricanchaIndex.jpg" alt="franklin landscape">
+        </a></div>
+        <div><h2>Greenville South Carolina</h2>
+            <h5 class="population1">Population 451,225</h5>
+         <h5 class="population">Founded 1786</h5> 
+            <a href="greenville.php"><img src="images/KuelapIndex.jpg" alt="franklin landscape">
+            </a>
+        </div>
+    </div>
+
+</main>
+    
+ <footer>
+    <aside>
+      Contact information placeholder
+    </aside>
+    <p class="footer-bar">&copy;2017 All Rights Reserved | Site Title | <?php echo date("l, j \ F Y") . "<br>"; ?> </p>
+</footer>
+
+<script type="text/javascript" src="scripts/hamburger.js"></script>
+
+<script type="text/javascript" src="scripts/stormseverity.js" async></script>
+
+</body>
+
+</html>
