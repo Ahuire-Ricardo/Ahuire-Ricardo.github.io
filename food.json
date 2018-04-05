@@ -2,21 +2,21 @@
 	{
 	"id":"001",
 	"name": "Ceviche",
-	"Price": "$ 10.00",
+	"Price": "$ 10.00"
 	},
 	{
 	"id":"002",
 	"name": "Arroz con Pollo",
-	"Price": "$ 7.00",
+	"Price": "$ 7.00"
 	},
 	{
 	"id":"003",
 	"name": "Ají de Gallina",
-	"Price": "$ 7.00",
+	"Price": "$ 7.00"
 	},
 	{
 	"id":"004",
 	"name": "Lomo Saltado",
-	"Price": "$ 8.00",
+	"Price": "$ 8.00"
 	}
 ]
