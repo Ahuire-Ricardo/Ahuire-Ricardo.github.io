@@ -19,7 +19,7 @@
 	        <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
 
 <script>
-	function showGroupList() {
+	function showGroupList(position) {
 		
 	    var movieTitle = document.getElementById("movie").value;
 	    var xmlhttp = new XMLHttpRequest();
@@ -27,12 +27,9 @@
 		
 	    xmlhttp.onreadystatechange = function() {
 	      if (this.readyState == 4 && this.status == 200) {
-		 var myObj = JSON.parse(this.responseText);
-		 var ele = document.getElementById("movies");
+		 document.getElementById("groupList").innerHTML = this.responseText;
 		 
-		 for (var i = 0; i < myObj.length; i++) {
-		     ele.innerHTML = ele.innerHTML + '<li>' + myObj[i].Title + '</li>';
-	      }
+		 
 	    }
 
 	    xmlhttp.open("GET",url, true);
@@ -85,10 +82,10 @@
   <div class="col-md-12">
 	  <label>Enter Favorite Movie: </lable> <input id="movie" type="text" value=""></input><br /><br />
     		
-		<button id="groupJson" onclick="showGroupList()">Display Group List</button>
+		<button id="groupJson" onclick="showGroupList(this)">Display Group List</button>
 	  
 	  <div id="groupList"></div>
-	    <ul id="movies"> </ul>
+	    
 		
 	</div>
 
