@@ -28,10 +28,10 @@
 	    xmlhttp.onreadystatechange = function() {
 	      if (this.readyState == 4 && this.status == 200) {
 		 var myObj = JSON.parse(this.responseText);
-		 var ele = document.getElementById("groupList");
+		 var ele = document.getElementById("movies");
 		 
 		 for (var i = 0; i < myObj.length; i++) {
-		     ele.innerHTML = ele.innerHTML + myObj[i].Title;
+		     ele.innerHTML = ele.innerHTML + '<li>' + myObj[i].Title + </li>;
 	      }
 	    }
 
@@ -88,7 +88,7 @@
 		<button id="groupJson" onclick="showGroupList(this.id)">Display Group List</button>
 	  
 	  <div id="groupList"></div>
-		
+	    <ul id="movies"> </ul>
 		
 	</div>
 
