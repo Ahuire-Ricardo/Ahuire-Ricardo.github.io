@@ -22,13 +22,14 @@
 	function showGroupList(position) {
 		
 	    var movieTitle = document.getElementById("movie").value;
-	    var xmlhttp = new XMLHttpRequest();
-	    var url = "https://www.omdbapi.com/?apikey=39ebc70b&s=" + movieTitle;
-		
-	    xmlhttp.onreadystatechange = function() {
-	      if (this.readyState == 4 && this.status == 200) {
-		 document.getElementById("groupList").innerHTML = this.responseText;
-		 
++	    var xmlhttp = new XMLHttpRequest();
++	    var url = "https://www.omdbapi.com/?apikey=39ebc70b&s=" + movieTitle;
++		
++	    xmlhttp.onreadystatechange = function() {
++	      if (this.readyState == 4 && this.status == 200) {
++		 document.getElementById("groupList").innerHTML = this.responseText;
++	      }
++	    	 
 		 
 	    }
 
