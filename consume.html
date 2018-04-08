@@ -20,20 +20,22 @@
 
 <script>
 	function showGroupList(position) {
-	
-    var xmlhttp = new XMLHttpRequest();
-    
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         document.getElementById("groupList").innerHTML = this.responseText;
-      }
-    }
-    
-    xmlhttp.open("GET","groupJson.json", true);
-    xmlhttp.send();
+		
+	    var movieTitle = document.getElementById("movie").value;
+	    var xmlhttp = new XMLHttpRequest();
+	    var url = "https://www.omdbapi.com/?apikey=39ebc70b&s=" + movieTitle;
+		
+	    xmlhttp.onreadystatechange = function() {
+	      if (this.readyState == 4 && this.status == 200) {
+		 document.getElementById("groupList").innerHTML = this.responseText;
+	      }
+	    }
 
-    
-}
+	    xmlhttp.open("GET",url, true);
+	    xmlhttp.send();
+
+
+	}
             
 </script>
 
@@ -77,6 +79,7 @@
  </code></pre>
 	 
   <div class="col-md-12">
+	  <label>Enter Favorite Movie: </lable> <input id="movie" type="text" value=""></input><br /><br />
     		
 		<button id="groupJson" onclick="showGroupList(this.id)">Display Group List</button>
 	  
