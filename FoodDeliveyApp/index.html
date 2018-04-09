@@ -75,12 +75,16 @@
       request.open("GET", requestURL, true);
       request.send();
 
-    localStorage.setItem("food", document.getElementById('dinner').value);
-    localStorage.setItem("fullname", document.getElementById('fullname').value);
-    localStorage.setItem("email", document.getElementById('email').value);
-    localStorage.setItem("phone", document.getElementById('phone').value);
-    localStorage.setItem("stormType", document.getElementById('stormType').value);
-    localStorage.setItem("address", document.getElementById('address').value);
+         
+    function GetDataOrder(){
+      localStorage.setItem("food", document.getElementById('dinner').value);
+      localStorage.setItem("fullname", document.getElementById('fullname').value);
+      localStorage.setItem("email", document.getElementById('email').value);
+      localStorage.setItem("phone", document.getElementById('phone').value);
+      localStorage.setItem("stormType", document.getElementById('stormType').value);
+      localStorage.setItem("address", document.getElementById('address').value);
+
+    }
 
     function GetFoodDetail(){
        localStorage.setItem("foodDetail", document.getElementById('dinner').value);
@@ -137,7 +141,7 @@
                 </datalist>
                 <label><span>ADDRESS:</span><input id="address" name="address" type="text" value="" placeholder="JR. POMABAMBA 1238" required></label>
             </fieldset>
-            <input type="submit" value="3: GENERATE YOUR ORDER" class="submitBtn" >
+            <input type="submit" value="3: GENERATE YOUR ORDER" class="submitBtn" onclick="GetDataOrder()">
       </form>
     </div>
 </main>
