@@ -1,0 +1,103 @@
+<!doctype html>
+
+<title>
+        Best Food Delivery | Munchery | Munchery
+</title>
+
+<link rel='shortcut icon' href="images/favicon.ico" />
+
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ricardo Ahuire">
+  <meta name="description" content="web about time pronostic">
+  <!-- external style references in the proper cascading order -->    
+  <link href="https://fonts.googleapis.com/css?family=Merriweather%7CMerriweather+Sans" rel="stylesheet">  <!-- Google API font reference -->
+  <link href="styles/normalize.css" rel="stylesheet"> <!-- normalize useragent/browser defaults -->
+  <link href="styles/main.css" rel="stylesheet">    <!-- default styles - small/phone views -->
+  <link href="styles/medium.css" rel="stylesheet"><!-- medium/tablet views -->
+  <link href="styles/large.css" rel="stylesheet">   <!-- large/wide/desktop views --> 
+
+   <script type="text/javascript">
+
+      var request = new XMLHttpRequest();
+      var requestURL = 'https://ahuire-ricardo.github.io/food.json';
+      
+      request.onload = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            
+              console.log("Response: " + this.responseText);
+              var myObj = JSON.parse(this.responseText);
+             
+              var ele = document.getElementById("detail");
+
+              for (var i = 0; i < myObj.length; i++) {
+                  // BIND DATA TO <select> ELEMENT.
+                  if (myObj[i].title== localStorage.getItem("foodDetail")){
+                      /*ele.innerHTML = ele.innerHTML +
+                      '<option value="' + myObj[i].title + '">' + myObj[i].title + '</option>';*/
+                       console.log("Response: " + myObj[i].url);
+                       console.log("Response: " + myObj[i].directions);
+                       console.log("Response: " + myObj[i].title);
+                       console.log("Response: " + myObj[i].description);
+                       console.log("Response: " + myObj[i].ingredients);
+
+                       ele.innerHTML = ele.innerHTML +
+                       '<h2 class="weathernow">' + myObj[i].title + '</h2><ul class="Springfield"><li>Description: <b>' +
+                       myObj[i].description + '</b></li><li>Ingredients: <b>' + myObj[i].ingredients + '</b></li><li>Directions: <b>' +
+                       myObj[i].directions + '</b></li></ul><a href="index.html" class="button" class="back">BACK</a>';
+                  }
+              }
+            
+          }
+
+      };
+      request.open("GET", requestURL, true);
+      request.send();
+     
+     
+
+   </script>
+  
+</head>
+<body>
+
+ 
+
+  <header class="logoheader">
+    <a title="Your PeruvianDeliveryFood.com" href="index.html"><img src="images/LogoCook.png" alt="Your PeruvianDeliveryFood.com"></a>
+    <h1>Patty's Peruvian Food</h1>
+    <h4 class="slogan">Remembering mom's food!</h4>
+</header>
+  
+  <!-- site navigation use placeholder references -->
+  <nav class="navigation">
+    <!--<button class="hamburger" onclick="toggleNavMenu()">&#9776;</button>-->
+    <button class="hamburger" onclick="toggleNavMenu()">&#9776;</button>
+    
+    <ul id="primaryNavigation" class="hide">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="menu.html">Menu</a></li>
+    </ul>  
+  </nav>
+    
+  <main id="detail">
+       
+      
+   
+    
+</main>
+    
+ <footer>
+    <aside>
+      Contact information placeholder
+    </aside>
+    <p class="footer-bar">&copy;2018 All Rights Reserved | Site Title | <?php echo date("l, j \ F Y") . "<br>"; ?> </p>
+</footer>
+
+<script type="text/javascript" src="scripts/hamburger.js"></script>
+
+</body>
+
+</html>
