@@ -293,20 +293,6 @@ label span {
     margin-bottom: .5em;
 }
 
-a.submitBtn {
-    -webkit-appearance: none;
-    border: solid 1px #ffbbad;
-    width: 100%;
-    margin: .5em 0;
-    font-family: 'Merriweather', serif;
-    font-size: 1.33em;
-    text-shadow: .5px .5px 1px #000000;
-    padding: .6em;
-    background: #ff5733;
-    box-shadow: 3px 3px 9px #ffbbad;
-    color: white;
-}
-
 .spinner {
     margin: 10px auto;
     width: 70px;
@@ -353,6 +339,22 @@ a.button {
     color: white;
     text-align: center;
 }
+
+a.submitBtn {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    border: solid 1px #ffbbad;
+    width: 100%;
+    margin: .5em 0;
+    font-family: 'Merriweather', serif;
+    font-size: 1.33em;
+    text-shadow: .5px .5px 1px #000000;
+    padding: .6em;
+    background: #ff5733;
+    box-shadow: 3px 3px 9px #ffbbad;
+    color: white;
+}
+
 
  input.submitBtn:hover {
     box-shadow: 3px 3px 9px rgba(0,2,2,1);
