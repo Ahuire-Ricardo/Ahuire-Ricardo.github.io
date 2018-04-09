@@ -1,0 +1,88 @@
+@media only screen and (min-width: 1141px){
+ 
+    
+    
+    /* header */
+       
+header {
+    font-size: large;
+}
+    
+/* nav */
+    
+nav ul li {
+        flex-basis: auto; 
+        -ms-flex: auto;
+    }
+    
+    nav ul li {
+        -ms-flex: 0 0 auto;
+    }
+     
+.navigation {
+    margin-left: -10px;
+    overflow: hidden;
+    background-color: #ff5733;
+}
+
+.navigation li a {
+    color: black;
+    font-size: 27px;
+    padding: 10px 15px 10px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+.navigation li a:hover {
+    background-color: #ffbbad;
+    color: #ff5733;
+}
+    
+/* main */
+    
+.weathernow {
+    font-size: xx-large;
+}
+    .franklin li {
+        font-size: x-large;
+    }
+    
+    .Springfield li {
+        font-size: x-large;
+    }
+    
+    .Greenville li {
+        font-size: x-large;
+    }
+    
+.tenday {
+    display: block;
+    font-size: xx-large;
+}
+.hidesmall {
+    display: block;
+    margin-left: 28px;
+    }
+th {
+    font-size: x-large;
+}
+td {
+    font-size: x-large;
+}
+    
+/*  Weather Gallery Grid */
+	div.weatherGallery {
+  		grid-template-columns: repeat(3, 32%);
+	}
+	div.weatherGallery figure:hover {
+		box-shadow: 3px 3px 9px rgba(0,2,2,1);
+	}
+    div.citygrid {
+  		grid-template-columns: repeat(3, 32%);
+	}
+	div.citygrid figure:hover {
+		box-shadow: 3px 3px 9px rgba(0,2,2,1);
+	}
+
+}  /* end of media query */

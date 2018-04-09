@@ -1,0 +1,473 @@
+/*------Prevents phones from resizing in landscape mode -------*/
+html { -webkit-text-size-adjust: none}
+
+/*-----------apply a natural box layout model to all elements -------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+
+/* header */
+
+.logoheader img {
+  float: left;
+  margin-left: 20px;
+  top: 18px;
+  width: 85px;
+  height: 85px;
+}
+
+.logoheader h1 {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+body {
+    background-color: #fff
+}
+
+header {
+    background-color: #fff;
+    color: black;
+    text-shadow: 1.5px 1.5px 2.5px #000000;
+    padding: 5px;
+}
+h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 38px;
+    margin-left: 170px;
+}
+
+.slogan {
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 2px;
+    margin-left: 170px;
+}
+
+/* nav */
+
+nav ul {display: flex;
+        display: -ms-flexbox;
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+}
+
+nav ul.show{display: flex;
+            display: -ms-flexbox;}
+nav ul.hide{display: none;}
+        
+
+nav ul li {list-style: none;
+           flex-basis: 100%;
+           -ms-flex: 100%;
+}
+
+.navigation { 
+    background-color: #ff5733;
+    margin:0;
+    padding: 0;
+}
+
+nav button {
+    position: absolute;
+    top: .5rem;
+    right: 2%;
+}
+
+
+.navigation li a {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    text-shadow: .5px .5px 1.5px #000000;
+    font-size: x-large;
+    display: block;
+    color: black;
+    padding: .5rem 0;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    background-color: #ffbbad;
+    color: #ff5733;
+}
+
+.navigation li a.active {
+    background-color: #2b7cff;
+    color: #B2CFFF;
+}
+
+/* main */
+.weathernow {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #FF5733;
+    text-shadow: .5px .5px 1.5px #000000;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.GalleryHeadline {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #2b7cff;
+    font-size: xx-large;
+    text-shadow: .5px .5px 1.5px #000000;
+    margin-top: 35px;
+    margin-left: 35px;
+    margin-bottom: 5px;
+}
+
+h2.homepagestory {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #2b7cff;
+    font-size: xx-large;
+    text-shadow: .5px .5px 1.5px #000000;
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+.franklin {
+    font-family: 'Merriweather', serif;
+    margin-left: 20px;
+}
+.franklin b {
+    font-family: 'Merriweather', serif;
+    color:#2061cc;
+}
+.Springfield {
+    font-family: 'Merriweather', serif;
+    margin-left: 20px;
+}
+.Springfield b {
+    font-family: 'Merriweather', serif;
+    color:black;
+}
+
+.Greenville {
+    font-family: 'Merriweather', serif;
+    margin-left: 20px;
+}
+.Greenville b {
+    font-family: 'Merriweather', serif;
+    color:#2061cc;
+}
+/* table */
+.tenday {display: none;}
+.hidesmall {display: none;}
+
+.tendaybackground {
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #2b7cff;
+    text-shadow: .5px .5px 1px #000000;
+    color: black;
+}
+
+th {
+    padding: 5px 5px 3px 3px;
+    text-shadow: .25px .25px .75px #000000;
+}
+
+td {
+    text-align: center;
+    text-shadow: .25px .25px .75px #000000;
+}
+
+.tenday {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #2b7cff;
+    text-shadow: .5px .5px 1.5px #000000;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+main div.photoFullWidth {
+    margin: 0;
+    margin-left: 2%;
+    width: 96%;}
+main div.photoFullWidth img {width: 100%;}
+
+/*  Weather Gallery Grid  */
+div.weatherGallery {
+  padding: 0 2%;
+  display: grid;
+    grid-template-columns: repeat(1, 100%);
+}
+div.weatherGallery figure {margin: 2rem 0; border: 1px solid #aaa;}
+div.weatherGallery figure img {width: 100%;}
+div.weatherGallery figure figcaption {text-align: center; font-size: .9rem;}
+
+/* Home Page */
+section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.citygrid {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-gap: 20px;
+}
+
+main .citygrid {
+    padding: 0 2%;
+  display: grid;
+    grid-template-columns: repeat(1, 100%);
+}
+
+.citygrid h2 {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 3%;
+}
+
+div.weatherGallery figure:hover {
+    box-shadow: 3px 3px 9px rgba(0,2,2,1);
+  }
+div.citygrid div:hover {
+    box-shadow: 3px 3px 9px rgba(0,2,2,1);
+  }
+
+div.citygrid div {margin: 2rem 0; border: 1px solid #aaa;}
+div.citygrid div img {width: 100%;}
+.population1 {text-align: inherit; margin-top: 0; margin-bottom: 5px; margin-left: 15px; font-size: 1.15rem;}
+.population {text-align: inherit; margin-top: 1px; margin-left: 15px; font-size: 1.15rem;}
+
+/* Form Data Weather Center */
+
+body.scbackground {
+    background-image: url(stormcenterBG1200.jpg);
+}
+
+.bosc {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #2b7cff;
+    font-size: xx-large;
+    text-shadow: .5px .5px 1.5px #000000;
+    margin-top: 35px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+
+form#stormdata {
+    margin: 1em 3%;
+}
+fieldset {
+    background-color: white;
+    margin: 1.5em 0;
+    border: #ffbbad solid 3px;
+}
+legend {
+    font-family: 'Merriweather', serif;
+    margin-left: 3%;
+    padding: .5em;
+    border: #ffbbad solid 2px;
+    color: white;
+    background-color: #ff5733;
+    font-size: 1em;
+    }
+label {
+    display: block;
+    margin: .5em;
+}
+label span {
+    display: block;
+    font-size: 1.25em;
+    padding-top: .5em;
+    padding-bottom: .3em;
+    color: #ff5733;
+}
+
+.stdate {
+    margin-bottom: .1em;
+}
+
+.info {
+    margin-left: .7em;
+}
+
+.stinfo {
+    font-family: 'Merriweather', serif;
+    Color: black;
+    margin-left: .7em;
+    margin-bottom: .5em;
+}
+
+input.submitBtn {
+    -webkit-appearance: none;
+    border: solid 1px #ffbbad;
+    width: 100%;
+    margin: .5em 0;
+    font-family: 'Merriweather', serif;
+    font-size: 1.33em;
+    text-shadow: .5px .5px 1px #000000;
+    padding: .6em;
+    background: #ff5733;
+    box-shadow: 3px 3px 9px #ffbbad;
+    color: white;
+}
+
+.spinner {
+    margin: 10px auto;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > img {
+    margin: 50px 0;
+    transform: rotate(-90deg);
+    
+    -webkit-animation: rotate 1.5s infinite ease;
+    animation: rotate 1.5s infinite ease;
+    width:100px;
+
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rotate {
+    0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+}
+
+/* Standard syntax */
+@keyframes rotate {
+    0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    border: solid 1px #ffbbad;
+    width: 25%;
+    margin: .3em 0;
+    font-family: 'Merriweather', serif;
+    font-size: 1.00em;
+    text-shadow: .5px .5px 1px #000000;
+    padding: .6em;
+    background: #ff5733;
+    box-shadow: 3px 3px 9px #ffbbad;
+    color: white;
+    text-align: center;
+}
+
+ input.submitBtn:hover {
+    box-shadow: 3px 3px 9px rgba(0,2,2,1);
+  }
+
+/* Thank You*/
+
+main p.appreciate {
+    font-family: 'Merriweather', serif;
+    font-weight: 800;
+    margin-top: 2em;
+    margin-left: 2.5em;
+}
+
+
+/* footer */
+footer {
+    font-family: 'Merriweather', serif;
+    font-size: small;
+    padding-top: 8px;
+    background-color: #fff;
+    color: #000000;
+    }
+.datestamp {
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+#demo {
+    text-align: center;
+}
+.contact {
+    text-align: center;
+    margin: 0 15px;
+}
+.author {
+    text-align: center;
+    margin: 3px;
+}
+.terms {
+        color: #000;
+    }
+
+//Table css
+thead th:nth-child(1) {
+        background-color:  #7fb9c2;
+    }
+
+thead tr th {
+    font-family: 'Merriweather', serif;
+    border: #ffbbad solid 2px;
+    background-color: #ff5733;
+}
+
+thead {
+    padding: 10px;
+    font-size: 28px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9a795;
+}
+
+tr:nth-child(even) {
+    background-color: #ffbbad;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    box-shadow: 6px 6px 10px #ffbbad;
+    transform: skew(3deg, -.5deg);
+    -webkit-transform: skew(3deg, -.5deg);
+    -moz-transform: skew(3deg, -.5deg);
+    -o-transform: skew(3deg, -.5deg);
+    -ms-transform: skew(3deg, -.5deg);
+}
+
+th {
+    color: #fff;
+    padding: 10px;
+    background-color: #ff5733;
+}
+
+td {
+    padding: 10px;
+}
+
+tbody {
+    color: #000;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px;
+}
+
+tr td.blackfriday {
+    background-color: #628ca6;
+}
+
+.blackfriday {
+    color: #fff;
+}
+
+tfoot tr:nth-child(1) {
+    background-color: #7fb9c2;
+}
+
+tfoot {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #7fb9c2;
+    color: #000;
+    font-size: 10px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;}
+
+table, th, td {
+   border: 1px solid gray;}
+

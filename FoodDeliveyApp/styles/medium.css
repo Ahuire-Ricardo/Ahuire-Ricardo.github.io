@@ -1,0 +1,77 @@
+@media only screen and (min-width: 37.5em) {   
+    
+/* nav */
+    
+    nav ul {flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+    } 
+    
+    nav ul.hide {display: flex;
+                 display: -ms-flexbox;
+    }
+    
+    nav ul li {
+        -ms-flex: 1 0 auto;
+    }
+    
+nav button {display: none;}
+    nav ul.hide{display: block}
+    
+.navigation {
+    margin-left: -18px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ff5733;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation li a {
+    color: black;
+    font-size: 23px;
+    padding: 13px 13px;
+    text-decoration: none;
+}
+
+/* Change the link color to #b2cfff (blue) on hover */
+    
+.navigation li a:hover {
+    background-color: #ffbbad;
+    color: #ff5733;
+}
+
+/* main */
+    
+.tenday {
+    display: block;
+}
+    
+.hidesmall {
+    display: block;
+    margin-left: 28px;
+}
+    
+.hidesmall td {
+    font-family: 'Merriweather', serif;
+    color: #143e7f;
+    }
+    
+/*  Weather Gallery Grid */
+  div.weatherGallery {
+      grid-template-columns: repeat(2, 49%);
+    grid-gap:2%;
+  }
+    div.weatherGallery figure:hover {
+    box-shadow: 3px 3px 9px rgba(0,2,2,1);
+  }
+    
+    div.citygrid {
+      grid-template-columns: repeat(2, 49%);
+    grid-gap:2%;
+  }
+    div.citygrid figure:hover {
+    box-shadow: 3px 3px 9px rgba(0,2,2,1);
+  }
+} /* end of media query */
