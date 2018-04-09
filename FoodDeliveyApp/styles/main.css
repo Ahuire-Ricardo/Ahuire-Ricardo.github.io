@@ -325,7 +325,6 @@ a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-
     text-decoration: none;
     border: solid 1px #ffbbad;
     width: 25%;
@@ -343,6 +342,7 @@ a.button {
 a.submitBtn {
     -webkit-appearance: button;
     -moz-appearance: button;
+    appearance: button;
     border: solid 1px #ffbbad;
     width: 100%;
     margin: .5em 0;
