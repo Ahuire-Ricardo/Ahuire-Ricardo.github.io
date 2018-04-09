@@ -120,7 +120,7 @@
       <img src="images/principal-small.jpg" alt="ligtning strike to the ground" sizes="100vw"
       srcset="images/principal-small.jpg 400w, images/principal-medium.jpg 800w, images/principal-large.jpg 1200w">
       
-      <form id="stormdata"  method="post" name="stormcenter" action="order.html">
+      <form id="stormdata"  method="post" name="stormcenter">
             <fieldset>
             <legend><span>1: CHOOSE YOUR ORDER</span></legend>
                 <label class="info"><span>FOOD:</span></label>
@@ -141,7 +141,8 @@
                 </datalist>
                 <label><span>ADDRESS:</span><input id="address" name="address" type="text" value="" placeholder="JR. POMABAMBA 1238" required></label>
             </fieldset>
-            <input type="submit" value="3: GENERATE YOUR ORDER" class="submitBtn" onclick="GetDataOrder()">
+            <a href="order.html" class="submitBtn" onclick="GetDataOrder()">3: GENERATE YOUR ORDER</a>
+           
       </form>
     </div>
 </main>
