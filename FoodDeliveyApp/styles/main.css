@@ -293,7 +293,7 @@ label span {
     margin-bottom: .5em;
 }
 
-#submitBtn {
+.a submitBtn {
     -webkit-appearance: none;
     border: solid 1px #ffbbad;
     width: 100%;
