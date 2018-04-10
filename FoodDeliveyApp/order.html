@@ -43,7 +43,7 @@
       
     function generateTheOrder(){
         var content = document.getElementById("order");
-        var table = "<section class='table'><h3>Your order</h3><table class='order' id='new'> <thead> <tr> <th colspan='3'>Patty's Peruvian Food</th> </tr> </thead>";
+        var table = "<section class='table'><h3></h3><table class='order' id='new'> <thead> <tr> <th colspan='3'>Your order</th> </tr> </thead>";
         
         table += "<tbody><tr><td>" + "Full Name:" + "</td><td>" + localStorage.getItem("fullname") + "</td></tr>" + 
                         "<tr><td>" + "Address:" + "</td><td>" + localStorage.getItem("address") + " " + localStorage.getItem("stormType") + "</td></tr>" +
