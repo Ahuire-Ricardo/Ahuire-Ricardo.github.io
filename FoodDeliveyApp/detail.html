@@ -39,7 +39,10 @@
                        console.log("Response: " + myObj[i].ingredients);
 
                        ele.innerHTML = ele.innerHTML +
-                       '<h2 class="weathernow">' + myObj[i].title + '</h2><ul class="Springfield"><li>Description: <b>' +
+                       '<h2 class="weathernow">' + myObj[i].title +
+                       '</h2><img src="' + myObj[i].small +
+                       '" alt="ajiGallina" sizes="100vw" srcset="'+ myObj[i].small + ' 400w,' + myObj[i].medium + ' 800w,' + myObj[i].large + 
+                       ' 1200w"><ul class="Springfield"><li>Description: <b>' +
                        myObj[i].description + '</b></li><li>Ingredients: <b>' + myObj[i].ingredients + '</b></li><li>Directions: <b>' +
                        myObj[i].directions + '</b></li></ul><a href="index.html" class="button" class="back">BACK</a>';
                   }
