@@ -11,14 +11,13 @@ html { -webkit-text-size-adjust: none}
 .logoheader img {
   float: left;
   margin-left: 20px;
-  top: 18px;
-  width: 85px;
-  height: 85px;
+  width: 135px;
+  height: 135px;
 }
 
 .logoheader h1 {
   position: relative;
-  top: 1px;
+  top: 18px;
   left: 1px;
 }
 
@@ -27,8 +26,8 @@ body {
 }
 
 header {
-    background-color: #fff;
-    color: black;
+    background-color: #ff5733;
+    color: white;
     text-shadow: 1.5px 1.5px 2.5px #000000;
     padding: 5px;
 }
@@ -102,7 +101,7 @@ nav button {
     color: #FF5733;
     text-shadow: .5px .5px 1.5px #000000;
     margin-top: 30px;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 .GalleryHeadline {
@@ -134,8 +133,10 @@ h2.homepagestory {
 }
 .Springfield {
     font-family: 'Merriweather', serif;
-    margin-left: 20px;
+    text-align: justify;
+    /*margin-left: 20px;*/
 }
+
 .Springfield b {
     font-family: 'Merriweather', serif;
     color:black;
@@ -143,11 +144,11 @@ h2.homepagestory {
 
 .Greenville {
     font-family: 'Merriweather', serif;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 .Greenville b {
     font-family: 'Merriweather', serif;
-    color:#2061cc;
+    color:#ff5733;
 }
 /* table */
 .tenday {display: none;}
@@ -184,6 +185,14 @@ main div.photoFullWidth {
     margin-left: 2%;
     width: 96%;}
 main div.photoFullWidth img {width: 100%;}
+
+img {
+    border-style: none;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+}
 
 /*  Weather Gallery Grid  */
 div.weatherGallery {
@@ -293,6 +302,7 @@ label span {
     margin-bottom: .5em;
 }
 
+
 .spinner {
     margin: 10px auto;
     width: 70px;
@@ -339,6 +349,10 @@ a.button {
     text-align: center;
 }
 
+input.submitBtn:hover {
+    box-shadow: 3px 3px 9px rgba(0,2,2,1);
+}
+
 a.submitBtn {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -357,10 +371,19 @@ a.submitBtn {
     text-align: center;
 }
 
-
- input.submitBtn:hover {
-    box-shadow: 3px 3px 9px rgba(0,2,2,1);
-  }
+/*input.submitBtn {
+    -webkit-appearance: none;
+    border: solid 1px #ffbbad;
+    width: 100%;
+    margin: .5em 0;
+    font-family: 'Merriweather', serif;
+    font-size: 1.33em;
+    text-shadow: .5px .5px 1px #000000;
+    padding: .6em;
+    background: #ff5733;
+    box-shadow: 3px 3px 9px #ffbbad;
+    color: white;
+}*/
 
 /* Thank You*/
 
@@ -377,8 +400,8 @@ footer {
     font-family: 'Merriweather', serif;
     font-size: small;
     padding-top: 8px;
-    background-color: #fff;
-    color: #000000;
+    background-color: white;
+    color: black;
     }
 .datestamp {
     text-align: center;
