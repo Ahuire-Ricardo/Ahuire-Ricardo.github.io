@@ -1,57 +1,9 @@
-{
-  "colors": [
-    {
-      "color": "black",
-      "category": "hue",
-      "type": "primary",
-      "code": {
-        "rgba": [255,255,255,1],
-        "hex": "#000"
-      }
-    },
-    {
-      "color": "white",
-      "category": "value",
-      "code": {
-        "rgba": [0,0,0,1],
-        "hex": "#FFF"
-      }
-    },
-    {
-      "color": "red",
-      "category": "hue",
-      "type": "primary",
-      "code": {
-        "rgba": [255,0,0,1],
-        "hex": "#FF0"
-      }
-    },
-    {
-      "color": "blue",
-      "category": "hue",
-      "type": "primary",
-      "code": {
-        "rgba": [0,0,255,1],
-        "hex": "#00F"
-      }
-    },
-    {
-      "color": "yellow",
-      "category": "hue",
-      "type": "primary",
-      "code": {
-        "rgba": [255,255,0,1],
-        "hex": "#FF0"
-      }
-    },
-    {
-      "color": "green",
-      "category": "hue",
-      "type": "secondary",
-      "code": {
-        "rgba": [0,255,0,1],
-        "hex": "#0F0"
-      }
-    },
-  ]
-}
+{		"directions": "The original recipe is done with Peruvian white corn, it has the biggest grain in the world and it can be cut off the cob and peeled to prepare for the recipe, but I substituted it for just the frozen bags that we can find in any grocery store. Preferably, grind the corn using a grinding machine , not blender (as last resource you can blend the corn in a good blender using very little liquid). Set aside. Blend the salt, pepper, cumin, vinegar and red dried chile (previously roasted and deveined). Cut the meat into medium sized pieces and marinade for about an hour in the previous mix. Brown the meat in a teaspoon of lard, add the left over marinade and the two cups of water, and bring it to a boil, simmer to cook for two hours. Remove the pieces of meat and set aside. Add the broth to the corn, the rest of the lard, peanuts, sesame seeds, 6 yolks and the glass of Pisco ( if you can't find Peruvian Pisco leave it like that, don't substitute). Work the dough until it makes \"eyes\", or air bubbles. Set aside. To prepare the banana leaves you must pass them quickly over open fire (gas burner) or grill, exposure to high heat will bring out the flavors they release and turn them flexible enough to be used as wrapping. Make sure to take off the thick nerve like center of the leave. To put the tamales together:. take about three spoonfuls of dough and place them on the center of a piece of banana leaf. dig a hole in the middle and place a piece of meat, a piece of egg, an olive, one peanut, and a wedge of the fresh aji Mirasol, this may be substituted by any fresh chile, although the aji Mirasol or aji amarillo (yellow chile) has a very distinctive flavor and is just mildly spicy. Close the hole on the dough by adding a little bit more dough or folding and tapping it closed,pushing some of the surrounding dough on it. Wrap well with the banana leaf, closing tightly all four sides on top of the dough. Use another piece of banana leaf to wrap the tamal again starting on the opposite direction and tie tightly using a string cut out of some more banana leaf or a common piece of string. Set aside. Place the corn cobs at the bottom of a deep pot (rather big or medium size)and some of the banana leaves on top of the corn cobs. Add just enough water to cover the leaves. Place the tamales vertically and side by side so the steam travels freely through them and cover them with the rest of the banana leaves. Cook for about 4 hours. Serve with a type of onion salad called salsa criolla. Salsa Criolla:. Chop a whole onion julienne style, rinse once with water and salt, and pat dry. Cut one or two small tomatoes in thin wedges. Add two tablespoons of mint leaves, two tablespoons of cilantro leaves, and one fresh aji amarillo (yellow chile) deveined and sliced. Toss everything together and add the juice of half a lime, freshly squeezed. Season with salt and pepper to taste. Serve each tamal warm, unwrapped, and with a couple of spoonfuls of salsa criolla on top. Decorate topping with a branch of parsley or cilantro. For Sunday breakfast place a roll of fresh french bread on the side of the dish. ENJOY! Submit a Correction",
+		"url": "http://www.food.com/recipe/peruvian-tamales-criollos-182974",
+		"title": "Peruvian Tamales Criollos",
+		"description": "Red tamales Peruvian style. One of the most traditional dishes of Peruvian cuisine, people enjoy them for Sunday breakfast served with salsa criolla and crispy french bread rolls. Moist, slightly spicy, and with an exotic flavor provided by the banana leave wrapping; stuffed traditionally with pork or chicken. Try them you will love them!",
+		"small": "images/Tamales-small.jpg",
+		"medium": "images/Tamales-medium.jpg",
+		"large": "images/Tamales-large.jpg",
+		"ingredients": {"2 lbs of peeled white corn", "2 1\u20442 lbs pork chops (no bones)", "6 dried red chilies", "2 fresh yellow chilies, roasted (Aji MIrasol)", "6 egg yolks", "2 hard-boiled eggs, cut into eight pieces (wedges, not slices)", "2 tablespoons vinegar", "8 freshh garlic cloves, peeled", "1\u20442 teaspoon ground pepper", "1\u20442 teaspoon ground cumin", "50 g roasted sesame seeds", "100 g roasted peanuts (ground)", "1\u20442 lb pork fat", "2 cups water", "100 g black olives (preferably Peruvian)", "1 lb banana leaf (cut in 12-inch X 18-inch pieces)", "string", "10 ears corn on the cob (without kernels)"}
+	}
