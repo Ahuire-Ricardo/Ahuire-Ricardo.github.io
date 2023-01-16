@@ -1,0 +1,41 @@
+.fig {
+  background-color: #ffffff;
+}
+
+.texto {
+  /*font-size: 30px;*/
+  font-weight: bold;
+  font-family: Impact;
+  fill: #457b9d;
+}
+
+.grupo {
+  fill: #ffffff44;
+  stroke: #00000050;
+  stroke-width: 1px;
+}
+
+.ejes {
+  /*font-size: 18px;*/
+  font-family: "Fira Code";
+  stroke-width: 0px;
+}
+
+.ejes line {
+  stroke-width: 0.3;
+  stroke: #74707064;
+  stroke-dasharray: 1 4;
+}
+
+.labels {
+  /*font-size: 16px;*/
+  font-family: "Arial";
+}
+
+.consecutivoMes {
+  /*font-size: 190px;*/
+  font-family: "Consolas";
+  fill: rgb(220, 215, 215);
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
